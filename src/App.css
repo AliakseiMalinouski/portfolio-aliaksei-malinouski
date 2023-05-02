@@ -43,10 +43,19 @@ a {
   flex-direction: row-reverse;
   height: 100%;
   align-items: center;
+  position: relative;
 }
 
 .Header .Container .HeaderContent .HeaderLinks {
   width: 350px;
   display: flex;
   justify-content: space-between;
+  margin-right: 100px;
+}
+
+.Header .Container .HeaderContent .Logo {
+  position: absolute;
+  top: 40%;
+  left: 0px;
+  font-weight: 600;
 }

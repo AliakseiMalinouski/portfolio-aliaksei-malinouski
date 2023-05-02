@@ -13,7 +13,7 @@ export const LanguageSelect = React.memo(({languages, content, currentLanguage})
     }
 
     return (
-        <FormControl sx={{ mr: '100px', minWidth: 120}}  size="small">
+        <FormControl sx={{ minWidth: 120 }}  size="small">
             <InputLabel id="demo-select-small-label">{currentLanguage}</InputLabel>
             <Select
             labelId="demo-select-small-label"

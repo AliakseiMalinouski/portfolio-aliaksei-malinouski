@@ -9,6 +9,7 @@ import { languagesThunk } from "../Redux/Header/languagesThunk";
 import { eventLoop } from "../events";
 import {changeLanguage} from 'i18next';
 import { updateCurrentLanguage } from "../Redux/Header/languagesSlice";
+import { linkSpanHeader } from "../motion variants/variants";
 
 export const Header = React.memo(() => {
 
@@ -41,15 +42,16 @@ export const Header = React.memo(() => {
     }, [changeCurrentLanguageParent]);
 
 
-    const linksMemoizeed = useMemo(() => links.map(({id, link, key}) => <Link key={id} link={link} translateKey={key} setLanguage={t}/>), [links, t]);
+    const linksMemoizeed = useMemo(() => links.map(({id, link, key}) => <Link key={id} link={link} translateKey={key} setLanguage={t} variant={linkSpanHeader}/>), [links, t]);
     const translateSelectMemoizeed = useMemo(() => <LanguageSelect key={1} languages={languages} content={t} currentLanguage={currentLanguage}/>, [languages, t, currentLanguage])
 
     return (
         <div className="HeaderContent">
+            {translateSelectMemoizeed}
             <div className="HeaderLinks">
                 {linksMemoizeed}
             </div>
-            {translateSelectMemoizeed}
+            <h3 className="Logo">Aliaksei.dev</h3>
         </div>
     )
 })
