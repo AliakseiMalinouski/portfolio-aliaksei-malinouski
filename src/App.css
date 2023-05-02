@@ -24,6 +24,7 @@ li {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 .Container {
@@ -31,3 +32,21 @@ a {
   width: 1300px;
 }
 
+
+
+.Header .Container{
+  height: 80px;
+}
+
+.Header .Container .HeaderContent {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+  align-items: center;
+}
+
+.Header .Container .HeaderContent .HeaderLinks {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,39 +1,34 @@
 import React from "react";
 import {motion, AnimatePresence} from 'framer-motion';
 import {eventLoop} from '../events';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-export const LanguageSelect = React.memo(({languages, languagesState, content}) => {
+export const LanguageSelect = React.memo(({languages, content, currentLanguage}) => {
 
     const changeCurrentLanguage = (language) => {
         eventLoop.emit("changeCurrentLanguage", language);
     }
 
-    const changeLanguageState = () => {
-        eventLoop.emit("changeLanguageState");
-    }
-
     return (
-        <AnimatePresence>
-            {
-                !languagesState
-                ?
-                <motion.div
-                onClick={changeLanguageState}
-                >
-                    {content('language')}
-                </motion.div>
-                :
-                <motion.ul>
-                    <li onClick={changeLanguageState}>{content('language')}</li>
-                    {
-                        languages.map(({id, language}) => <li key={id} 
-                        onClick={() => changeCurrentLanguage(language)}
-                        >
-                            {language}
-                        </li>)
-                    }
-                </motion.ul>
-            }
-        </AnimatePresence>
+        <FormControl sx={{ mr: '100px', minWidth: 120}}  size="small">
+            <InputLabel id="demo-select-small-label">{currentLanguage}</InputLabel>
+            <Select
+            labelId="demo-select-small-label"
+            id="demo-select-small"
+            label={currentLanguage}
+            >
+                {
+                    languages.map(({id, language}) => <MenuItem
+                    key={id} 
+                    onClick={() => changeCurrentLanguage(language)}
+                    >
+                        {language}
+                    </MenuItem>)
+                }
+            </Select>
+        </FormControl>
     )
 })
