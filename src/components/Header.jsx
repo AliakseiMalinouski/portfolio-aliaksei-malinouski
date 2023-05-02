@@ -10,12 +10,13 @@ import { eventLoop } from "../events";
 import {changeLanguage} from 'i18next';
 import { updateCurrentLanguage } from "../Redux/Header/languagesSlice";
 import { linkSpanHeader } from "../motion variants/variants";
+import { useNavigate } from "react-router-dom";
 
 export const Header = React.memo(() => {
 
     let dispatch = useDispatch();
     let {t} = useTranslation();
-
+    let navigate = useNavigate();
 
     const links = useSelector(state => state.links.links);
     const languages = useSelector(state => state.languages.languages);
@@ -51,7 +52,7 @@ export const Header = React.memo(() => {
             <div className="HeaderLinks">
                 {linksMemoizeed}
             </div>
-            <h3 className="Logo">Aliaksei.dev</h3>
+            <h3 className="Logo" onClick={() => navigate('/')}>Aliaksei.dev</h3>
         </div>
     )
 })

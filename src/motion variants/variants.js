@@ -4,12 +4,76 @@ export const linkSpanHeader = {
     },
     visible: {
         opacity: 1,
-        fontWeight: 600,
+        fontWeight: 700,
         transition: {
             duration: 0.8
         }
     },
     hover: {
         color: "#30c",
+    }
+}
+
+export const mainTitle = {
+    hidden: {
+        x: -1000,
+        opacity: 0
+    },
+    visible: custom => ({
+        x: 0,
+        opacity: 1,
+        transition: {
+            delay: custom * 0.3,
+            duration: 0.8
+        }
+    })
+}
+
+export const heroParagraph = {
+    hidden: {
+        x: -1000,
+        opacity: 0
+    },
+    visible: custom => ({
+        x: 0,
+        opacity: 1,
+        transition: {
+            delay: custom * 1.3,
+            duration: 0.8
+        }
+    })
+}
+
+export const heroSocial = {
+    hidden: {
+        x: -1000,
+        opacity: 0
+    },
+    visible: custom => ({
+        x: 0,
+        opacity: 1,
+        transition: {
+            delay: custom * 1.6,
+            duration: 0.8
+        }
+    })
+}
+
+export const myPhoto = {
+    hidden: {
+
+    },
+    visible: {
+        scale: 1.09,
+        transition: {
+            delay: 0.5,
+            duration: 2,
+            repeat: Infinity,
+            repeatDelay: 1,
+            repeatType: 'reverse',
+            type: 'tween',
+            ease: 'easeInOut'
+        },
+
     }
 }
