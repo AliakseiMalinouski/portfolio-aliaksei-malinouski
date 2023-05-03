@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { transformString } from "../helpers/transformString";
+import { ButtonWrapper } from "./Button";
+import { heroButton } from "../motion variants/variants";
 
-export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocial, myPhoto}) => {
+export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocial, myPhoto, heroButtonText}) => {
 
     let newParagraph = transformString('divide', paragraph);
 
@@ -42,6 +44,7 @@ export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocia
                     />
                     </motion.a>
                 </motion.div>
+                <ButtonWrapper type="heroButton" content="click" variantsHero={heroButton} heroButtonText={heroButtonText}/>
             </div>
             <motion.img
             initial={'hidden'}

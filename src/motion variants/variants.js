@@ -55,7 +55,7 @@ export const heroSocial = {
         transition: {
             delay: custom * 1.6,
             duration: 0.8
-        }
+        },
     })
 }
 
@@ -76,4 +76,19 @@ export const myPhoto = {
         },
 
     }
+}
+
+export const heroButton = {
+    hidden: {
+        x: -1000,
+        opacity: 1
+    },
+    visible: custom => ({
+        opacity: 1,
+        x: 0,
+        transition: {
+            delay: custom * 1.9,
+            duration: 0.8
+        },
+    })
 }

@@ -8,7 +8,13 @@ export const Home = React.memo(() => {
 
     let {t} = useTranslation();
 
-    let heroMemoizeed = useMemo(() => <Hero key={1} variantTitle={mainTitle} myPhoto={myPhoto} variantSocial={heroSocial} variantP={heroParagraph} paragraph={t("hero-paragraph")}/>, [t])
+    let heroMemoizeed = useMemo(() => <Hero key={1}
+    variantTitle={mainTitle}
+    myPhoto={myPhoto}
+    variantSocial={heroSocial}
+    variantP={heroParagraph}
+    heroButtonText={t("hero-button-text")}
+    paragraph={t("hero-paragraph")}/>, [t])
 
     return (
         <div className="Home">
