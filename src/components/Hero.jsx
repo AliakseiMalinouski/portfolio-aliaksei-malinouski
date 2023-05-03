@@ -1,7 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { transformString } from "../helpers/transformString";
 
 export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocial, myPhoto}) => {
+
+    let newParagraph = transformString('divide', paragraph);
+    console.log(newParagraph)
+
     return (
         <div className="Hero">
             <div>
@@ -19,8 +24,7 @@ export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocia
                 variants={variantP}
                 custom={0.4}
                 >
-                    {paragraph} 
-                    <img src="https://i.ibb.co/0KngG4N/placeholder.png" className="LocateIcon" alt="Locate"/>
+                    { newParagraph.middleString } <br/> { newParagraph.afterMiddleString } <img src="https://i.ibb.co/0KngG4N/placeholder.png" className="LocateIcon" alt="Locate"/>
                 </motion.p>
                 <motion.div className="SocialNetworks"
                 initial={'hidden'}
