@@ -5,7 +5,6 @@ import { transformString } from "../helpers/transformString";
 export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocial, myPhoto}) => {
 
     let newParagraph = transformString('divide', paragraph);
-    console.log(newParagraph)
 
     return (
         <div className="Hero">

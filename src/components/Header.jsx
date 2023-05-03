@@ -11,6 +11,7 @@ import {changeLanguage} from 'i18next';
 import { updateCurrentLanguage } from "../Redux/Header/languagesSlice";
 import { linkSpanHeader } from "../motion variants/variants";
 import { useNavigate } from "react-router-dom";
+import { Snack } from "./Snack";
 
 export const Header = React.memo(() => {
 
@@ -21,6 +22,7 @@ export const Header = React.memo(() => {
     const links = useSelector(state => state.links.links);
     const languages = useSelector(state => state.languages.languages);
     const currentLanguage = useSelector(state => state.languages.currentLanguage);
+    const [snakeState, setSnackState] = useState(false);
 
     useEffect(() => {
         if(!links.length) dispatch(navLinksThunk);
@@ -33,6 +35,7 @@ export const Header = React.memo(() => {
     const changeCurrentLanguageParent = useCallback((language) => {
         changeLanguage(language);
         dispatch(updateCurrentLanguage(language));
+        setSnackState(true);
     }, [dispatch]);
 
     useEffect(() => {
@@ -53,6 +56,7 @@ export const Header = React.memo(() => {
                 {linksMemoizeed}
             </div>
             <h3 className="Logo" onClick={() => navigate('/')}>Aliaksei.dev</h3>
+            <Snack open={snakeState} currentLanguage={currentLanguage} handleClose={() => setSnackState(false)} content={t}/>
         </div>
     )
 })

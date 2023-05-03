@@ -4,5 +4,9 @@
     "about-page": "Обо мне",
     "contacts-page": "Контакт",
     "language": "Язык",
-    "hero-paragraph": "Привет! Меня зовут Алексей Малиновский. Я Front-End разработчик из Вроцлав, Польша"
+    "hero-paragraph": "Привет! Меня зовут Алексей Малиновский. Я Front-End разработчик из Вроцлав, Польша",
+    "english": "",
+    "russian": "",
+    "polish": "",
+    "language-snack": "Язык успешно сменён на "
 }
