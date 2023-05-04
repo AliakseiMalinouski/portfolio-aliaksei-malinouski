@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import {Button} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 
-export const ButtonWrapper = React.memo(({content, type, variantsHero, usuallyVariant, heroButtonText}) => {
+export const ButtonWrapper = React.memo(({content, type, variantsHero, usuallyVariant, heroButtonText, usuallyText}) => {
     let navigate = useNavigate();
     if(type === 'heroButton') {
         return (
@@ -20,6 +20,12 @@ export const ButtonWrapper = React.memo(({content, type, variantsHero, usuallyVa
         )
     }
     else {
-
+        return (
+            <div>
+                <Button variant="text">
+                    {usuallyText}
+                </Button>
+            </div>
+        )
     }
 })
