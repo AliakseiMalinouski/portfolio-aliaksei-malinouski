@@ -105,3 +105,18 @@ export const largeTitle = {
         }
     }
 }
+
+export const projectVariant = {
+    hidden: {
+        opacity: 0,
+        x: -1000
+    },
+    visible: custom => ({
+        opacity: 1,
+        transition: {
+            delay: custom * 0.5,
+            duration: 0.8
+        },
+        x: 0
+    })
+}

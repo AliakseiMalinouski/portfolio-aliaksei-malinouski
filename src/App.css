@@ -120,4 +120,28 @@ h1 {
 
 .Content .Container .Home .Projects .Project {
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 100px;
+}
+
+.Content .Container .Home .Projects .Project .ShortProjectInfo {
+  width: 50%;
+  padding-left: 50px;
+}
+
+.Content .Container .Home .Projects .Project .ShortProjectInfo h3 {
+  font-size: 24px;
+}
+
+.Content .Container .Home .Projects .Project .ShortProjectInfo p {
+  margin-top: 14px;
+  line-height: 25px;
+  margin-bottom: 14px;
+}
+
+.Content .Container .Home .Projects .Project .ProjectImage {
+  width: 50%;
+  height: 393.66px;
+  border-radius: 6px;
 }
