@@ -5,6 +5,7 @@ import { mainTitle, heroParagraph, heroSocial, myPhoto } from "../motion variant
 import { useTranslation } from "react-i18next";
 import { projectsInfoThunk } from "../Redux/Projects/projectsInfoThunk";
 import { Project } from "./Project";
+import { Title } from "./Title";
 
 export const Home = React.memo(() => {
 
@@ -41,9 +42,12 @@ export const Home = React.memo(() => {
     content={t}
     />), [projects, t]);
 
+    let titleMemoizeed = useMemo(() => <Title tag='h2' text="title" content={t}/> , [t]);
+
     return (
         <div className="Home">
             {heroMemoizeed}
+            {titleMemoizeed}
             <div className="Projects">
                 {projectsMemoizeed}
             </div>
