@@ -19,7 +19,7 @@ export const ButtonWrapper = React.memo(({content, type, variantsHero, usuallyVa
             </motion.div>
         )
     }
-    else if(type === 'projectButton') {
+    else {
         return (
             <div>
                 <Button variant="outlined">
