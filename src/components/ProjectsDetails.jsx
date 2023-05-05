@@ -36,10 +36,10 @@ export const ProjectsDetails = React.memo(() => {
     useEffect(() => {
         setTimeout(() => {
             setStackState(true);
-        }, 3000);
+        }, 1000);
         setTimeout(() => {
             setPackState(true);
-        }, 5000);
+        }, 1500);
     }, []);
 
     let titleMemoizeed = useMemo(() => currentProject && <Title content={t} text={currentProject.title} tag="h3"/>, [currentProject, t]);
