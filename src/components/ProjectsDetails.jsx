@@ -31,7 +31,7 @@ export const ProjectsDetails = React.memo(() => {
 
     let titleMemoizeed = useMemo(() => currentProject && <Title content={t} text={currentProject.title} tag="h3"/>, [currentProject, t]);
 
-    let stackMemoizeed = useMemo(() => currentProject && currentProject.stack?.map(({id, tech, icon}) => <Tech key={id} tech={tech} icon={icon}/>), [currentProject])
+    let stackMemoizeed = useMemo(() => currentProject && currentProject.stack?.map(({id, tech, icon}) => <Tech key={id} tech={tech} icon={icon}/>), [currentProject]);
 
     return (
         <div className="ProjectsDetails">
@@ -42,11 +42,17 @@ export const ProjectsDetails = React.memo(() => {
                     <motion.img variants={projectsDetailsImage} initial={'hidden'} animate={'visible'} src={currentProject && currentProject.image} alt='Project' className="ProjectImage"/>
                     <div className="MoreAboutProject">
                         {titleMemoizeed}
-                        <ul>
-                            {
-                                stackMemoizeed
-                            }
-                        </ul>
+                        <div className="InfoAboutStackAndPackages">
+                            <div className="InfoAboutStack">
+                                <span className="StackTitle">{t("stack")}</span>
+                                <ul className="StackOfTech">
+                                    {stackMemoizeed}
+                                </ul>
+                            </div>
+                            <div className="InfoAboutPackages">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
                 :

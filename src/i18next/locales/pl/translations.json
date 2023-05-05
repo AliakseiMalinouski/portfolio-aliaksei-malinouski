@@ -26,5 +26,6 @@
     "short-description-yanki": "Ten projekt to internetowy sklep z odzieżą damską, w którym...",
     "full-description-yanki": "Projekt ten to internetowy sklep z odzieżą damską, w którym znajdują się różnego rodzaju damskie okrycia wierzchnie: kurtki, płaszcze, żakiety i futra. Użytkownik ma możliwość dodania towaru do koszyka, złożenia zamówienia poprzez wypełnienie formularza. Wszystkie zamówienia trafiają do historii zamówień, do której użytkownik uzyskuje dostęp po uprzedniej rejestracji konta lub po zalogowaniu się. Strona ma możliwość przełączania i obsługuje trzy języki: angielski, rosyjski i ukraiński. Użytkownik może uzyskać cenę za towar w trzech walutach: dolar, euro i ukraińska hrywna. Na stronie głównej znajduje się również formularz opinii, który po wypełnieniu wysyła wszystkie informacje na adres e-mail.",
     "read-more-button-text": "Więcej",
-    "title": "Projekty"
+    "title": "Projekty",
+    "stack": "Technologie stosowe: "
 }

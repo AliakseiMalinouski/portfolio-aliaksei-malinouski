@@ -139,7 +139,6 @@ export const largeTitleProjectsDetails = {
 export const projectsDetailsImage = {
     hidden: {
         opacity: 0,
-        height: 0
     },
     visible: {
         opacity: 1,
@@ -147,6 +146,5 @@ export const projectsDetailsImage = {
             delay: 0.3,
             duration: 1
         },
-        height: 393.66
     }
 }
