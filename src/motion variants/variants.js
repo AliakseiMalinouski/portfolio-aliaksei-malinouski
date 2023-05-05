@@ -120,3 +120,33 @@ export const projectVariant = {
         x: 0
     })
 }
+
+export const largeTitleProjectsDetails = {
+    hidden: {
+        opacity: 0,
+        x: 1000
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            delay: 0.1,
+            duration: 1.2
+        },
+        x: 0
+    }
+}
+
+export const projectsDetailsImage = {
+    hidden: {
+        opacity: 0,
+        height: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            delay: 0.3,
+            duration: 1
+        },
+        height: 393.66
+    }
+}

@@ -145,3 +145,31 @@ h1 {
   height: 393.66px;
   border-radius: 6px;
 }
+
+.Content .Container .ProjectsDetails {
+  padding-top: 100px;
+}
+
+.Content .Container .ProjectsDetails .ProjectDetailsTitle {
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.Content .Container .ProjectsDetails .ProjectImage {
+  width: 50%;
+  height: 393.66px;
+  border-radius: 12px;
+}
+
+.Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject {
+  width: 100%;
+  height: 393.66px;
+}
