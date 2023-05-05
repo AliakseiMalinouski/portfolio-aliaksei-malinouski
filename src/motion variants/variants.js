@@ -174,3 +174,6 @@ export const techVariant = {
         }
     })
 }
+
+
+

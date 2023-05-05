@@ -28,5 +28,6 @@
     "read-more-button-text": "Więcej",
     "title": "Projekty",
     "stack": "Technologie stosowe: ",
-    "links": "Szczegółowa aplikacja i kod źródłowy: "
+    "links": "Szczegółowa aplikacja i kod źródłowy: ",
+    "api": "APIs wykorzystywane przez aplikację: "
 }

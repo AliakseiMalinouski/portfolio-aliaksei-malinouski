@@ -148,6 +148,7 @@ h1 {
 
 .Content .Container .ProjectsDetails {
   padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .Content .Container .ProjectsDetails .ProjectDetailsTitle {
@@ -274,4 +275,16 @@ h1 {
 .Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .SocialLinks li img {
   width: 20px;
   margin-left: 7px;
+}
+
+.Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject p {
+  margin-top: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+
+.Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .ApiList {
+  margin-top: 30px;
 }

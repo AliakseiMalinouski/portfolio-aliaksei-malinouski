@@ -28,5 +28,6 @@
     "read-more-button-text": "Read more",
     "title": "Projects",
     "stack": "Stack technologies: ",
-    "links": "Deployed application and source code: "
+    "links": "Deployed application and source code: ",
+    "api": "APIs used by the application: "
 }

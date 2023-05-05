@@ -11,6 +11,8 @@ import { Tech } from "./Tech";
 import { Pack } from "./Pack";
 import { Button } from "@mui/material";
 import { LinksToProject } from "./LinksToProject";
+import { Api } from "./Api";
+
 
 export const ProjectsDetails = React.memo(() => {
 
@@ -47,7 +49,9 @@ export const ProjectsDetails = React.memo(() => {
 
     let packsMemoizeed = useMemo(() => currentProject && currentProject.packs?.map((elem, index) => <Pack key={elem.id} custom={index} pack={elem.pack} icon={elem.icon}/>), [currentProject]);
 
-    let linksToProjectMemoizeed = useMemo(() => currentProject && <LinksToProject github={currentProject.github} vercel={currentProject.deploy}/>, [currentProject])
+    let linksToProjectMemoizeed = useMemo(() => currentProject && <LinksToProject github={currentProject.github} vercel={currentProject.deploy}/>, [currentProject]);
+
+    let apisMemoizeed = useMemo(() => currentProject && currentProject.apis?.map((elem, index) => <Api key={elem.id} link={elem.link} name={elem.name} custom={index}/>), [currentProject])
 
     return (
         <div className="ProjectsDetails">
@@ -79,10 +83,27 @@ export const ProjectsDetails = React.memo(() => {
                         </div>
                     </div>
                 </div>
-                <div className="OtherInfoAboutCurrentProject">
+                <motion.div className="OtherInfoAboutCurrentProject"
+                initial={{
+                    opacity: 0,
+                }}
+                animate={{
+                    opacity: 1,
+                }}
+                transition={{
+                    duration: 1.5
+                }}
+                >
                     <h4>{t('links')} <img src="https://i.ibb.co/vDsbfZR/down-arrow.png" alt="Arrow"/></h4>
                     {linksToProjectMemoizeed}
-                </div>
+                    <p>
+                        {t(`${currentProject.full}`)}
+                    </p>
+                    <h4>{t('api')} <img src="https://i.ibb.co/cQnL730/icons8-api-48.png" alt="API"/></h4>
+                    <ul className="ApiList">
+                        {apisMemoizeed}
+                    </ul>
+                </motion.div>
                 </>
                 :
                 null
