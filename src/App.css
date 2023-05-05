@@ -176,8 +176,8 @@ h1 {
 
 .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .InfoAboutStackAndPackages {
   display: flex;
-  justify-content: space-between;
-  padding-left: 78px;
+  justify-content: space-evenly;
+  /* padding-left: 78px; */
 }
 
 .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .StackOfTech {
@@ -187,10 +187,10 @@ h1 {
 }
 
 .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .StackTitle {
-  padding-bottom: 20px;
   display: block;
-  font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .StackOfTech li {
@@ -206,3 +206,31 @@ h1 {
   margin-left: 7px;
 }
 
+
+
+.Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .Packes {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .PacksTitle {
+  display: block;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+
+.Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .Packes li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .Packes li img {
+  width: 20px;
+  margin-left: 7px;
+}

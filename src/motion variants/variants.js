@@ -148,3 +148,29 @@ export const projectsDetailsImage = {
         },
     }
 }
+
+export const packVariant = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: custom => ({
+        opacity: 1,
+        transition: {
+            delay: custom * 0.5,
+            
+        }
+    })
+}
+
+export const techVariant = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: custom => ({
+        opacity: 1,
+        transition: {
+            delay: custom * 0.5,
+            
+        }
+    })
+}

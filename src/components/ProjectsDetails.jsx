@@ -8,6 +8,8 @@ import {Title} from './Title';
 import { motion } from "framer-motion";
 import { projectsDetailsImage } from "../motion variants/variants";
 import { Tech } from "./Tech";
+import { Pack } from "./Pack";
+import { Button } from "@mui/material";
 
 export const ProjectsDetails = React.memo(() => {
 
@@ -22,6 +24,8 @@ export const ProjectsDetails = React.memo(() => {
     const projects = useSelector(state => state.projects.projects);
 
     const [currentProject, setCurrentProject] = useState({});
+    const [stackState, setStackState] = useState(false);
+    const [packState, setPackState] = useState(false);
 
     useEffect(() => {
         if(!projects.length) dispatch(projectsInfoThunk);
@@ -29,9 +33,20 @@ export const ProjectsDetails = React.memo(() => {
         setCurrentProject(neededProject);
     }, [dispatch, projects, projectType]);
 
+    useEffect(() => {
+        setTimeout(() => {
+            setStackState(true);
+        }, 3000);
+        setTimeout(() => {
+            setPackState(true);
+        }, 5000);
+    }, []);
+
     let titleMemoizeed = useMemo(() => currentProject && <Title content={t} text={currentProject.title} tag="h3"/>, [currentProject, t]);
 
-    let stackMemoizeed = useMemo(() => currentProject && currentProject.stack?.map(({id, tech, icon}) => <Tech key={id} tech={tech} icon={icon}/>), [currentProject]);
+    let stackMemoizeed = useMemo(() => currentProject && currentProject.stack?.map((elem, index) => <Tech key={elem.id} custom={index} tech={elem.tech} icon={elem.icon}/>), [currentProject]);
+
+    let packsMemoizeed = useMemo(() => currentProject && currentProject.packs?.map((elem, index) => <Pack key={elem.id} custom={index} pack={elem.pack} icon={elem.icon}/>), [currentProject]);
 
     return (
         <div className="ProjectsDetails">
@@ -44,13 +59,20 @@ export const ProjectsDetails = React.memo(() => {
                         {titleMemoizeed}
                         <div className="InfoAboutStackAndPackages">
                             <div className="InfoAboutStack">
-                                <span className="StackTitle">{t("stack")}</span>
-                                <ul className="StackOfTech">
+                                <Button variant={stackState ? "contained" : "outlined"} className="StackTitle" onClick={() => setStackState(prev => !prev)}>{t("stack")}</Button>
+                                {
+                                    !stackState ? null : <ul className="StackOfTech">
                                     {stackMemoizeed}
                                 </ul>
+                                }
                             </div>
                             <div className="InfoAboutPackages">
-
+                                <Button variant={packState ? "contained" : "outlined"} className="PacksTitle" onClick={() => setPackState(prev => !prev)}>{t("stack")}</Button>
+                                {
+                                    !packState ? null : <ul className="Packes">
+                                    {packsMemoizeed}
+                                </ul>
+                                }
                             </div>
                         </div>
                     </div>
