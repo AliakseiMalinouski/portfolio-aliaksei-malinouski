@@ -10,6 +10,7 @@ import { projectsDetailsImage } from "../motion variants/variants";
 import { Tech } from "./Tech";
 import { Pack } from "./Pack";
 import { Button } from "@mui/material";
+import { LinksToProject } from "./LinksToProject";
 
 export const ProjectsDetails = React.memo(() => {
 
@@ -36,10 +37,8 @@ export const ProjectsDetails = React.memo(() => {
     useEffect(() => {
         setTimeout(() => {
             setStackState(true);
-        }, 1000);
-        setTimeout(() => {
             setPackState(true);
-        }, 1500);
+        }, 1000);
     }, []);
 
     let titleMemoizeed = useMemo(() => currentProject && <Title content={t} text={currentProject.title} tag="h3"/>, [currentProject, t]);
@@ -48,11 +47,14 @@ export const ProjectsDetails = React.memo(() => {
 
     let packsMemoizeed = useMemo(() => currentProject && currentProject.packs?.map((elem, index) => <Pack key={elem.id} custom={index} pack={elem.pack} icon={elem.icon}/>), [currentProject]);
 
+    let linksToProjectMemoizeed = useMemo(() => currentProject && <LinksToProject github={currentProject.github} vercel={currentProject.deploy}/>, [currentProject])
+
     return (
         <div className="ProjectsDetails">
             {
                 currentProject 
                 ?
+                <>
                 <div className="ProjectsDetailsFlexBlock">
                     <motion.img variants={projectsDetailsImage} initial={'hidden'} animate={'visible'} src={currentProject && currentProject.image} alt='Project' className="ProjectImage"/>
                     <div className="MoreAboutProject">
@@ -77,6 +79,11 @@ export const ProjectsDetails = React.memo(() => {
                         </div>
                     </div>
                 </div>
+                <div className="OtherInfoAboutCurrentProject">
+                    <h4>{t('links')} <img src="https://i.ibb.co/vDsbfZR/down-arrow.png" alt="Arrow"/></h4>
+                    {linksToProjectMemoizeed}
+                </div>
+                </>
                 :
                 null
             }
