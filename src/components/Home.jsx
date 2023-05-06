@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { projectsInfoThunk } from "../Redux/Projects/projectsInfoThunk";
 import { Project } from "./Project";
 import { Title } from "./Title";
+import { Contacts } from "./Contacts";
 
 export const Home = React.memo(() => {
 
@@ -43,6 +44,7 @@ export const Home = React.memo(() => {
     />), [projects, t]);
 
     let titleMemoizeed = useMemo(() => <Title tag='h2' text="title" content={t}/> , [t]);
+ 
 
     return (
         <div className="Home">
@@ -51,6 +53,7 @@ export const Home = React.memo(() => {
             <div className="Projects">
                 {projectsMemoizeed}
             </div>
+            <Contacts/>
         </div>
     )
 })
