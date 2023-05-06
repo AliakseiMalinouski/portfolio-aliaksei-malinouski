@@ -29,5 +29,9 @@
     "title": "Projects",
     "stack": "Stack technologies: ",
     "links": "Deployed application and source code: ",
-    "api": "APIs used by the application: "
+    "api": "APIs used by the application: ",
+    "contact": "Contact",
+    "placeholder-name": "Your name",
+    "placeholder-email": "Your e-mail",
+    "placeholder-message-user": "Your message"
 }

@@ -29,5 +29,9 @@
     "title": "Projekty",
     "stack": "Technologie stosowe: ",
     "links": "Szczegółowa aplikacja i kod źródłowy: ",
-    "api": "APIs wykorzystywane przez aplikację: "
+    "api": "APIs wykorzystywane przez aplikację: ",
+    "contact": "Kontakt",
+    "placeholder-name": "Imię",
+    "placeholder-email": "E-mail",
+    "placeholder-message-user": "Wiadomość"
 }

@@ -1,7 +1,10 @@
 import React from "react";
 import {useForm} from 'react-hook-form';
+import { useTranslation } from "react-i18next";
 
 export const Contacts = React.memo(() => {
+
+    let {t} = useTranslation();
 
     const {
         register,
@@ -19,30 +22,28 @@ export const Contacts = React.memo(() => {
 
     return (
         <div className="Contacts">
-            <h3>Contact</h3>
             <form action="#" onSubmit={handleSubmit(handleForm)}>
-                <input type="text" placeholder="" {...register('userName', {
+                <input type="text" style={{
+                    border: errors?.userName ? '1px solid red' : ""
+                }} placeholder={errors?.userName ? errors?.userName?.message : t('placeholder-name')} {...register('userName', {
                     required: "This field is required",
                     minLength: {
                         value: 5,
                         message: 'Short'
                     }
                 })}/>
-                <div>
-                    {errors?.userName && <p>{errors?.userName?.message || 'Error with user name'}</p>}
-                </div>
-                <input type="text" placeholder="" {...register('email', {
+                <input type="text" style={{
+                    border: errors?.email ? '1px solid red' : ''
+                }} placeholder={errors?.email ? errors?.email?.message : t('placeholder-email')} {...register('email', {
                     required: "This field is required",
                     minLength: {
                         value: 5,
                         message: 'Min 5 symbols'
                     }
-                })}/><br/>
-                <br/>
-                <div>
-                    {errors?.email && <p>{errors?.email?.message || 'Error'}</p>}
-                </div>
-                <textarea placeholder=""
+                })}/>
+                <textarea style={{
+                    border: errors?.messageFromUser ? '1px solid red' : ""
+                }} placeholder={errors?.messageFromUser ? errors?.messageFromUser?.message : t('placeholder-message-user')} 
                 {...register('messageFromUser', {
                     required: "This field is required",
                     minLength: {
@@ -50,7 +51,7 @@ export const Contacts = React.memo(() => {
                         message: 'Min 10 sym'
                     }
                 })}
-                ></textarea><br/>
+                ></textarea>
                 <div>
                     {errors?.messageFromUser && <p>{errors?.messageFromUser?.message || 'Error textarea'}</p>}
                 </div>

@@ -32,5 +32,9 @@
     "title": "Проекты",
     "stack": "Stack технологии: ",
     "links": "Развёрнутое приложение и исходный код: ",
-    "api": "APIs, которыми пользуется приложение: "
+    "api": "APIs, которыми пользуется приложение: ",
+    "contact": "Контакт",
+    "placeholder-name": "Ваше имя",
+    "placeholder-email": "Ваш e-mail",
+    "placeholder-message-user": "Ваше сообщение"
 }

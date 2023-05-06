@@ -41,18 +41,16 @@ export const Home = React.memo(() => {
     title={title}
     type={type}
     content={t}
-    />), [projects, t]);
-
-    let titleMemoizeed = useMemo(() => <Title tag='h2' text="title" content={t}/> , [t]);
- 
+    />), [projects, t]); 
 
     return (
         <div className="Home">
             {heroMemoizeed}
-            {titleMemoizeed}
+            <Title tag='h2' text="title" content={t}/>
             <div className="Projects">
                 {projectsMemoizeed}
             </div>
+            <Title tag='h2' text="contact" content={t}/>
             <Contacts/>
         </div>
     )
