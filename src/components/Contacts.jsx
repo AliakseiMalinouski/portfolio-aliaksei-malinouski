@@ -13,7 +13,9 @@ export const Contacts = React.memo(() => {
         },
         handleSubmit,
         reset
-    } = useForm();
+    } = useForm({
+        mode: "onBlur"
+    });
 
     const handleForm = (data) => {
         console.log(JSON.stringify(data));
@@ -26,36 +28,38 @@ export const Contacts = React.memo(() => {
                 <input type="text" style={{
                     border: errors?.userName ? '1px solid red' : ""
                 }} placeholder={errors?.userName ? errors?.userName?.message : t('placeholder-name')} {...register('userName', {
-                    required: "This field is required",
+                    required: t("required-field"),
                     minLength: {
-                        value: 5,
-                        message: 'Short'
+                        value: 3,
+                        message: t("error-message-form-input-name")
                     }
                 })}/>
+                <p className="AlertAboutErrorInput">{errors?.userName && <span>{errors?.userName?.message}</span>}</p>
                 <input type="text" style={{
                     border: errors?.email ? '1px solid red' : ''
                 }} placeholder={errors?.email ? errors?.email?.message : t('placeholder-email')} {...register('email', {
-                    required: "This field is required",
+                    required: t("required-field"),
                     minLength: {
-                        value: 5,
-                        message: 'Min 5 symbols'
+                        value: 15,
+                        message: t("error-message-form-input-email")
                     }
                 })}/>
+                <p className="AlertAboutErrorInput">{errors?.email && <span>{errors?.email?.message}</span>}</p>
                 <textarea style={{
                     border: errors?.messageFromUser ? '1px solid red' : ""
                 }} placeholder={errors?.messageFromUser ? errors?.messageFromUser?.message : t('placeholder-message-user')} 
                 {...register('messageFromUser', {
-                    required: "This field is required",
+                    required: t("required-field"),
                     minLength: {
                         value: 10,
-                        message: 'Min 10 sym'
+                        message: t("error-message-form-input-message")
                     }
                 })}
                 ></textarea>
-                <div>
-                    {errors?.messageFromUser && <p>{errors?.messageFromUser?.message || 'Error textarea'}</p>}
-                </div>
-                <button type="submit">Send</button>
+                <p className="AlertAboutErrorTextArea">{errors?.messageFromUser && <span>{errors?.messageFromUser?.message}</span>}</p>
+                <button type="submit" className="SubmitFormButton" style={{
+                    opacity: !isValid ? '0.6' : "1"
+                }} disabled={!isValid}>Send</button>
             </form>
         </div>
     )

@@ -33,5 +33,9 @@
     "contact": "Kontakt",
     "placeholder-name": "Imię",
     "placeholder-email": "E-mail",
-    "placeholder-message-user": "Wiadomość"
+    "placeholder-message-user": "Wiadomość",
+    "required-field": "Jest to pole obowiązkowe*",
+    "error-message-form-input-name": "To pole wymaga minimum 3 znaków*",
+    "error-message-form-input-email": "W tym polu należy wpisać minimum 15 znaków. Przykład: mateuszkowalski1999@gmail.com*",
+    "error-message-form-input-message": "To pole wymaga minimum 10 znaków*"
 }

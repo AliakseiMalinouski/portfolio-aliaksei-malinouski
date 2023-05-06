@@ -36,5 +36,9 @@
     "contact": "Контакт",
     "placeholder-name": "Ваше имя",
     "placeholder-email": "Ваш e-mail",
-    "placeholder-message-user": "Ваше сообщение"
+    "placeholder-message-user": "Ваше сообщение",
+    "required-field": "Это обязательное поле*",
+    "error-message-form-input-name": "Это поле требует минимум 3 символов*",
+    "error-message-form-input-email": "Это поле требует минимум 15 символов. Формат: alexeymalinowski8980@gmail.com*",
+    "error-message-form-input-message": "Это поле требует минимум 10 символов*"
 }

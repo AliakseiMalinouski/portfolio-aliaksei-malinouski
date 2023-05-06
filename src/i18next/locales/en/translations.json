@@ -33,5 +33,9 @@
     "contact": "Contact",
     "placeholder-name": "Your name",
     "placeholder-email": "Your e-mail",
-    "placeholder-message-user": "Your message"
+    "placeholder-message-user": "Your message",
+    "required-field": "This is a mandatory field",
+    "error-message-form-input-name": "This field requires a minimum of 3 characters",
+    "error-message-form-input-email": "This field requires a minimum of 15 characters. Example: johngray689@gmail.com",
+    "error-message-form-input-message": "This field requires a minimum of 10 characters*"
 }
