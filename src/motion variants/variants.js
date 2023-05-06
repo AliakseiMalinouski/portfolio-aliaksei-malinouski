@@ -179,14 +179,14 @@ export const techVariant = {
 export const apisVariant = {
     hidden: {
         opacity: 0,
-        y: -100
+        x: 150
     },
     visible: custom => ({
         opacity: 1,
-        y: 0,
+        x: 0,
         transition: {
             delay: custom * 0.5,
             duration: 0.8
         }
-    })
+    }),
 }

@@ -148,7 +148,7 @@ h1 {
 
 .Content .Container .ProjectsDetails {
   padding-top: 100px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 
 .Content .Container .ProjectsDetails .ProjectDetailsTitle {
@@ -178,7 +178,6 @@ h1 {
 .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .InfoAboutStackAndPackages {
   display: flex;
   justify-content: space-evenly;
-  /* padding-left: 78px; */
 }
 
 .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .StackOfTech {
@@ -291,11 +290,18 @@ h1 {
 
 .Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .ApiList li {
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
   font-weight: 500;
 }
 
 .Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .ApiList li a {
   text-decoration: underline;
+}
+
+.Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .ApiList li img {
+  width: 20px;
+  margin-left: 8px;
 }
 
 .Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .ApiList li a:hover {

@@ -52,7 +52,7 @@ export const ProjectsDetails = React.memo(() => {
 
     let linksToProjectMemoizeed = useMemo(() => currentProject && <LinksToProject github={currentProject.github} vercel={currentProject.deploy}/>, [currentProject]);
 
-    let apisMemoizeed = useMemo(() => currentProject && currentProject.apis?.map((elem, index) => <Api key={elem.id} link={elem.link} name={elem.name} custom={index}/>), [currentProject])
+    let apisMemoizeed = useMemo(() => currentProject && currentProject.apis?.map((elem, index) => <Api key={elem.id} link={elem.link} name={elem.name} custom={index} icon={elem.icon}/>), [currentProject])
 
     return (
         <div className="ProjectsDetails">
@@ -100,11 +100,11 @@ export const ProjectsDetails = React.memo(() => {
                     <p>
                         {t(`${currentProject.full}`)}
                     </p>
-                    <h4 
+                    <Button variant={apisState ? 'contained' : 'outlined'}
                     onClick={() => {
                         setApisState(prev => !prev);
                     }}
-                    >{t('api')} <img src="https://i.ibb.co/cQnL730/icons8-api-48.png" alt="API"/></h4>
+                    >{t('api')}</Button>
                     <ul className="ApiList">
                         {
                             apisState ? apisMemoizeed : null
