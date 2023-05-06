@@ -1,6 +1,8 @@
 import React from "react";
 import {useForm} from 'react-hook-form';
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { fieldContactFormVariant, buttonContactFormVariant } from "../motion variants/variants";
 
 export const Contacts = React.memo(() => {
 
@@ -25,7 +27,7 @@ export const Contacts = React.memo(() => {
     return (
         <div className="Contacts">
             <form action="#" onSubmit={handleSubmit(handleForm)}>
-                <input type="text" style={{
+                <motion.input variants={fieldContactFormVariant} initial={'hidden'} whileInView={'visible'} custom={0.5} type="text" style={{
                     border: errors?.userName ? '1px solid red' : ""
                 }} placeholder={errors?.userName ? errors?.userName?.message : t('placeholder-name')} {...register('userName', {
                     required: t("required-field"),
@@ -35,7 +37,7 @@ export const Contacts = React.memo(() => {
                     }
                 })}/>
                 <p className="AlertAboutErrorInput">{errors?.userName && <span>{errors?.userName?.message}</span>}</p>
-                <input type="text" style={{
+                <motion.input variants={fieldContactFormVariant} initial={'hidden'} whileInView={'visible'} custom={1} type="text" style={{
                     border: errors?.email ? '1px solid red' : ''
                 }} placeholder={errors?.email ? errors?.email?.message : t('placeholder-email')} {...register('email', {
                     required: t("required-field"),
@@ -45,7 +47,7 @@ export const Contacts = React.memo(() => {
                     }
                 })}/>
                 <p className="AlertAboutErrorInput">{errors?.email && <span>{errors?.email?.message}</span>}</p>
-                <textarea style={{
+                <motion.textarea variants={fieldContactFormVariant} initial={'hidden'} whileInView={'visible'} custom={1.5} style={{
                     border: errors?.messageFromUser ? '1px solid red' : ""
                 }} placeholder={errors?.messageFromUser ? errors?.messageFromUser?.message : t('placeholder-message-user')} 
                 {...register('messageFromUser', {
@@ -55,11 +57,11 @@ export const Contacts = React.memo(() => {
                         message: t("error-message-form-input-message")
                     }
                 })}
-                ></textarea>
+                ></motion.textarea>
                 <p className="AlertAboutErrorTextArea">{errors?.messageFromUser && <span>{errors?.messageFromUser?.message}</span>}</p>
-                <button type="submit" className="SubmitFormButton" style={{
+                <motion.button variants={buttonContactFormVariant} initial={'hidden'} whileInView={'visible'} custom={2} type="submit" className="SubmitFormButton" style={{
                     opacity: !isValid ? '0.6' : "1"
-                }} disabled={!isValid}>Send</button>
+                }} disabled={!isValid}>Send</motion.button>
             </form>
         </div>
     )

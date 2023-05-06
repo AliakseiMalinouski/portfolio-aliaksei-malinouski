@@ -190,3 +190,31 @@ export const apisVariant = {
         }
     }),
 }
+
+export const fieldContactFormVariant = {
+    hidden: {
+        opacity: 0,
+        y: 250
+    },
+    visible: custom => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: custom * 0.5,
+            duration: 0.8
+        }
+    })
+}
+
+export const buttonContactFormVariant = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: custom => ({
+        opacity: 1,
+        transition: {
+            delay: custom * 0.8,
+            duration: 0.5
+        }
+    })
+}
