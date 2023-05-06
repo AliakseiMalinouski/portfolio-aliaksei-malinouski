@@ -288,3 +288,17 @@ h1 {
 .Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .ApiList {
   margin-top: 30px;
 }
+
+.Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .ApiList li {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .ApiList li a {
+  text-decoration: underline;
+}
+
+.Content .Container .ProjectsDetails  .OtherInfoAboutCurrentProject .ApiList li a:hover {
+  transition: 0.8s;
+  color: #8847F9;
+}

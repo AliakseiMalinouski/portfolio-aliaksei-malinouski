@@ -29,6 +29,7 @@ export const ProjectsDetails = React.memo(() => {
     const [currentProject, setCurrentProject] = useState({});
     const [stackState, setStackState] = useState(false);
     const [packState, setPackState] = useState(false);
+    const [apisState, setApisState] = useState(false);
 
     useEffect(() => {
         if(!projects.length) dispatch(projectsInfoThunk);
@@ -99,9 +100,15 @@ export const ProjectsDetails = React.memo(() => {
                     <p>
                         {t(`${currentProject.full}`)}
                     </p>
-                    <h4>{t('api')} <img src="https://i.ibb.co/cQnL730/icons8-api-48.png" alt="API"/></h4>
+                    <h4 
+                    onClick={() => {
+                        setApisState(prev => !prev);
+                    }}
+                    >{t('api')} <img src="https://i.ibb.co/cQnL730/icons8-api-48.png" alt="API"/></h4>
                     <ul className="ApiList">
-                        {apisMemoizeed}
+                        {
+                            apisState ? apisMemoizeed : null
+                        }
                     </ul>
                 </motion.div>
                 </>
