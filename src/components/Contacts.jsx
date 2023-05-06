@@ -21,6 +21,16 @@ export const Contacts = React.memo(() => {
         <div className="Contacts">
             <h3>Contact</h3>
             <form action="#" onSubmit={handleSubmit(handleForm)}>
+                <input type="text" placeholder="" {...register('userName', {
+                    required: "This field is required",
+                    minLength: {
+                        value: 5,
+                        message: 'Short'
+                    }
+                })}/>
+                <div>
+                    {errors?.userName && <p>{errors?.userName?.message || 'Error with user name'}</p>}
+                </div>
                 <input type="text" placeholder="" {...register('email', {
                     required: "This field is required",
                     minLength: {
