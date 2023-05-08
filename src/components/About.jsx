@@ -21,7 +21,7 @@ export const About = React.memo(() => {
         if(!stackOfTech.length) dispatch(techStackThunk);
     }, [dispatch, stackOfTech]);
 
-    let techMemoizeed = useMemo(() => stackOfTech && stackOfTech?.map((elem, index) => <Tech key={elem.id} custom={index} tech={location.pathname === '/' ? "" : elem.tech} icon={elem.icon} location={location.pathname === '/' ? location.pathname : ""}/>), [stackOfTech, location])
+    let techMemoizeed = useMemo(() => stackOfTech && stackOfTech?.map((elem, index) => <Tech key={elem.id} custom={index} tech={location.pathname === '/' || location.pathname === '/about' ? "" : elem.tech} icon={elem.icon} location={location.pathname === '/' ? location.pathname : ""}/>), [stackOfTech, location])
 
     return (
         <div className="About">
