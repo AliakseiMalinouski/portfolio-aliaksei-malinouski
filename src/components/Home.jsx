@@ -7,6 +7,7 @@ import { projectsInfoThunk } from "../Redux/Projects/projectsInfoThunk";
 import { Project } from "./Project";
 import { Title } from "./Title";
 import { Contacts } from "./Contacts";
+import { About } from "./About";
 
 export const Home = React.memo(() => {
 
@@ -52,6 +53,7 @@ export const Home = React.memo(() => {
             </div>
             <Title tag='h2' text="contact" content={t}/>
             <Contacts/>
+            <About/>
         </div>
     )
 })
