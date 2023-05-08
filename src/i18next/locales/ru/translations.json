@@ -42,5 +42,6 @@
     "error-message-form-input-email": "Это поле требует минимум 15 символов. Формат: alexeymalinowski8980@gmail.com*",
     "error-message-form-input-message": "Это поле требует минимум 10 символов*",
     "send-contact-form-button": "Отправить",
-    "about-me": "Обо мне"
+    "about-me": "Обо мне",
+    "my-tech-stack": "Мой стек технологии:"
 }

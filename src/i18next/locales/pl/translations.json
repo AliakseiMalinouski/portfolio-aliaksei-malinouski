@@ -39,5 +39,6 @@
     "error-message-form-input-email": "W tym polu należy wpisać minimum 15 znaków. Przykład: mateuszkowalski1999@gmail.com*",
     "error-message-form-input-message": "To pole wymaga minimum 10 znaków*",
     "send-contact-form-button": "Wyślij",
-    "about-me": "O mnie"
+    "about-me": "O mnie",
+    "my-tech-stack": "Mój stos technologiczny:"
 }

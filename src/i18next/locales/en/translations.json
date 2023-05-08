@@ -39,5 +39,6 @@
     "error-message-form-input-email": "This field requires a minimum of 15 characters. Example: johngray689@gmail.com",
     "error-message-form-input-message": "This field requires a minimum of 10 characters*",
     "send-contact-form-button": "Send",
-    "about-me": "About me"
+    "about-me": "About me",
+    "my-tech-stack": "My technology stack:"
 }
