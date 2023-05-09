@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewMessage } from "../Redux/Contact/messagesSlice";
 import {Snack} from './Snack';
+import { useState } from "react";
 
 export const Contacts = React.memo(() => {
 
@@ -20,6 +21,9 @@ export const Contacts = React.memo(() => {
     let dispatch = useDispatch();
 
     const messages = useSelector(state => state.messages.messages);
+
+    const [snakeState, setSnackState] = useState(false);
+    const [snackType, setSnackType] = useState("");
 
     const {
         register,
@@ -36,7 +40,8 @@ export const Contacts = React.memo(() => {
         send(emailJsConfig.serviceId, emailJsConfig.templateId, data, emailJsConfig.publicKey)
         .then(response => {
             if(response.status === 200) {
-                window.location.reload();
+                setSnackState(true);
+                setSnackType("message");
             }
             else {
                 alert("Error with post message to email");
@@ -49,7 +54,8 @@ export const Contacts = React.memo(() => {
     }
 
     return (
-        <div className="Contacts">
+        <>
+            <div className="Contacts">
             <Title tag='h2' text="contact" content={t}/>
             <form action="#" onSubmit={handleSubmit(handleForm)}>
                 <motion.input variants={fieldContactFormVariant} initial={'hidden'} whileInView={'visible'} viewport={{once: true}} custom={0.5} type="text" style={{
@@ -99,5 +105,7 @@ export const Contacts = React.memo(() => {
                 null
             }
         </div>
+        <Snack open={snakeState} handleClose={() => setSnackState(false)} content={t} snackType={snackType}/>
+        </>
     )
 })

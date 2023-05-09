@@ -7,7 +7,6 @@ import { projectsInfoThunk } from "../Redux/Projects/projectsInfoThunk";
 import { Project } from "./Project";
 import { Contacts } from "./Contacts";
 import { About } from "./About";
-import { useLocation } from "react-router-dom";
 import { Title } from "./Title";
 
 export const Home = React.memo(() => {
@@ -16,8 +15,6 @@ export const Home = React.memo(() => {
     let dispatch = useDispatch();
 
     const projects = useSelector(state => state.projects.projects);
-
-    let location = useLocation();
 
     useEffect(() => {
         if(!projects.length) dispatch(projectsInfoThunk);

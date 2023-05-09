@@ -24,7 +24,7 @@ export const Header = React.memo(() => {
     const currentLanguage = useSelector(state => state.languages.currentLanguage);
 
     const [snakeState, setSnackState] = useState(false);
-    
+    const [snackType, setSnackType] = useState("");
     
     let location = useLocation();
 
@@ -42,6 +42,7 @@ export const Header = React.memo(() => {
         changeLanguage(language);
         dispatch(updateCurrentLanguage(language));
         setSnackState(true);
+        setSnackType("language");
     }, [dispatch]);
 
     useEffect(() => {
@@ -62,7 +63,7 @@ export const Header = React.memo(() => {
                 {linksMemoizeed}
             </div>
             <h3 className="Logo" onClick={() => navigate('/')}>Aliaksei.dev</h3>
-            <Snack open={snakeState} currentLanguage={currentLanguage} handleClose={() => setSnackState(false)} content={t}/>
+            <Snack open={snakeState} currentLanguage={currentLanguage} handleClose={() => setSnackState(false)} content={t} snackType={snackType}/>
         </div>
     )
 })
