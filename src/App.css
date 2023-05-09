@@ -102,7 +102,7 @@ h1 {
 .Content .Container .Home .Hero .SocialNetworks {
   display: flex;
   justify-content: space-between;
-  width: 70px;
+  width: 110px;
 }
 
 .Content .Container .Home .Hero .MyPhoto {

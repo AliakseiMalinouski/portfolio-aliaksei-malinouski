@@ -3,6 +3,7 @@ import {useForm} from 'react-hook-form';
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { fieldContactFormVariant, buttonContactFormVariant } from "../motion variants/variants";
+import {send} from 'emailjs-com';
 
 export const Contacts = React.memo(() => {
 
@@ -20,7 +21,10 @@ export const Contacts = React.memo(() => {
     });
 
     const handleForm = (data) => {
-        console.log(JSON.stringify(data));
+        send("service_isl7or8", "template_50gjqeh", data, "TEEd-8_0HXteJTfo6")
+        .then(response => {
+            console.log(JSON.stringify(response))
+        })
         reset();
     }
 

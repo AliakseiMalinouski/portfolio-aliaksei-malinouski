@@ -43,6 +43,11 @@ export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocia
                     style={{width: '30px', heigth: '30px'}}
                     />
                     </motion.a>
+                    <motion.a href="mailto:aleksymalinowski21@gmail.com" target="_blank">
+                    <img src="https://i.ibb.co/CvNh5M4/email-1.png" alt="GitHub"
+                    style={{width: '30px', heigth: '30px'}}
+                    />
+                    </motion.a>
                 </motion.div>
                 <ButtonWrapper type="heroButton" content="click" variantsHero={heroButton} heroButtonText={heroButtonText}/>
             </div>
