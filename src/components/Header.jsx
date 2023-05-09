@@ -25,6 +25,7 @@ export const Header = React.memo(() => {
 
     const [snakeState, setSnackState] = useState(false);
     
+    
     let location = useLocation();
 
     let activeLink = location.pathname;

@@ -47,8 +47,6 @@ export const Home = React.memo(() => {
     content={t}
     />), [projects, t]); 
 
-    console.log(location.pathname)
-
     return (
         <div className="Home">
             {heroMemoizeed}

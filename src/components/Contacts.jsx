@@ -7,12 +7,19 @@ import {send} from 'emailjs-com';
 import { emailJsConfig } from "../emailjs-config";
 import { Title } from "./Title";
 import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewMessage } from "../Redux/Contact/messagesSlice";
+import {Snack} from './Snack';
 
 export const Contacts = React.memo(() => {
 
     let {t} = useTranslation();
 
     let location = useLocation();
+
+    let dispatch = useDispatch();
+
+    const messages = useSelector(state => state.messages.messages);
 
     const {
         register,
@@ -29,7 +36,7 @@ export const Contacts = React.memo(() => {
         send(emailJsConfig.serviceId, emailJsConfig.templateId, data, emailJsConfig.publicKey)
         .then(response => {
             if(response.status === 200) {
-
+                window.location.reload();
             }
             else {
                 alert("Error with post message to email");
@@ -40,7 +47,6 @@ export const Contacts = React.memo(() => {
         })
         reset();
     }
-
 
     return (
         <div className="Contacts">

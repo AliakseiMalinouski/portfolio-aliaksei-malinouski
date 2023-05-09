@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 
 export const Link = React.memo(({link, translateKey, setLanguage, variant, activeLink, activeVariant}) => {
-    console.log(activeLink, link)
     if(activeLink === link) {
         return (
             <motion.div
