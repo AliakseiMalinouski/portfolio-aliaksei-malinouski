@@ -14,6 +14,24 @@ export const linkSpanHeader = {
     }
 }
 
+
+export const activeLinkSpanHeader = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        fontWeight: 700,
+        color: "#30c",
+        transition: {
+            duration: 0.8
+        }
+    },
+    hover: {
+        color: "#30c",
+    }
+}
+
 export const mainTitle = {
     hidden: {
         x: -1000,
@@ -100,7 +118,7 @@ export const largeTitle = {
     visible: {
         opacity: 1,
         transition: {
-            delay: 1.5,
+            delay: 0.8,
             duration: 0.8
         }
     }
@@ -130,7 +148,7 @@ export const largeTitleProjectsDetails = {
         opacity: 1,
         transition: {
             delay: 0.1,
-            duration: 1.2
+            duration: 0.8
         },
         x: 0
     }
@@ -217,4 +235,43 @@ export const buttonContactFormVariant = {
             duration: 0.5
         }
     })
+}
+
+export const emailAddresVariant = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            delay: 1,
+            duration: 0.8
+        }
+    }
+}
+
+export const techStackTitleVariant = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            delay: 1,
+            duration: 0.8
+        }
+    }
+}
+
+export const largeParagraphAboutMeVariant = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            delay: 1,
+            duration: 0.8
+        }
+    }
 }

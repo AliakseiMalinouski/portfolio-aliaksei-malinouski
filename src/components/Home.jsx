@@ -5,9 +5,10 @@ import { mainTitle, heroParagraph, heroSocial, myPhoto } from "../motion variant
 import { useTranslation } from "react-i18next";
 import { projectsInfoThunk } from "../Redux/Projects/projectsInfoThunk";
 import { Project } from "./Project";
-import { Title } from "./Title";
 import { Contacts } from "./Contacts";
 import { About } from "./About";
+import { useLocation } from "react-router-dom";
+import { Title } from "./Title";
 
 export const Home = React.memo(() => {
 
@@ -15,6 +16,8 @@ export const Home = React.memo(() => {
     let dispatch = useDispatch();
 
     const projects = useSelector(state => state.projects.projects);
+
+    let location = useLocation();
 
     useEffect(() => {
         if(!projects.length) dispatch(projectsInfoThunk);
@@ -44,14 +47,15 @@ export const Home = React.memo(() => {
     content={t}
     />), [projects, t]); 
 
+    console.log(location.pathname)
+
     return (
         <div className="Home">
             {heroMemoizeed}
-            <Title tag='h2' text="title" content={t}/>
+            <Title tag='h2' text="title-project" content={t}/>
             <div className="Projects">
                 {projectsMemoizeed}
             </div>
-            <Title tag='h2' text="contact" content={t}/>
             <Contacts/>
             <About/>
         </div>

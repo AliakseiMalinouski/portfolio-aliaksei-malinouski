@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { techStackThunk } from "../Redux/About/techStackThunk";
 import { Tech } from "./Tech";
 import { useLocation } from "react-router-dom";
+import { techStackTitleVariant, largeParagraphAboutMeVariant } from "../motion variants/variants";
+import { motion } from "framer-motion";
 
 export const About = React.memo(() => {
 
@@ -27,10 +29,15 @@ export const About = React.memo(() => {
         <div className="About">
             <Title tag='h2' text="about-me" content={t}/>
             <div className="FlexGroup">
-                <h4>{t('my-tech-stack')}</h4>
+                <motion.h4 variants={techStackTitleVariant} initial={'hidden'} animate={'visible'}>{t('my-tech-stack')}</motion.h4>
                 <ul className="StackOfTech">
                     {techMemoizeed}
                 </ul>
+            </div>
+            <div className="MoreAboutMe">
+                <motion.p variants={largeParagraphAboutMeVariant} initial={'hidden'} animate={'visible'}>
+                    {t("all-info-about-me")}   
+                </motion.p>
             </div>
         </div>
     )

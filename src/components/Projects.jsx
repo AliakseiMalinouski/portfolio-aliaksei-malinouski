@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { projectsInfoThunk } from "../Redux/Projects/projectsInfoThunk";
+import { Title } from "./Title";
 
 export const Projects = React.memo(() => {
 
@@ -34,7 +35,8 @@ export const Projects = React.memo(() => {
     />), [projects, t]); 
 
     return (
-        <div className="Home">
+        <div className="AllProjects">
+            <Title tag='h2' text="title-project" content={t}/>
             <div className="Projects">
                 {projectsMemoizeed}
             </div>

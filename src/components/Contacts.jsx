@@ -2,13 +2,17 @@ import React from "react";
 import {useForm} from 'react-hook-form';
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { fieldContactFormVariant, buttonContactFormVariant } from "../motion variants/variants";
+import { fieldContactFormVariant, buttonContactFormVariant, emailAddresVariant } from "../motion variants/variants";
 import {send} from 'emailjs-com';
 import { emailJsConfig } from "../emailjs-config";
+import { Title } from "./Title";
+import { useLocation } from "react-router-dom";
 
 export const Contacts = React.memo(() => {
 
     let {t} = useTranslation();
+
+    let location = useLocation();
 
     const {
         register,
@@ -40,6 +44,7 @@ export const Contacts = React.memo(() => {
 
     return (
         <div className="Contacts">
+            <Title tag='h2' text="contact" content={t}/>
             <form action="#" onSubmit={handleSubmit(handleForm)}>
                 <motion.input variants={fieldContactFormVariant} initial={'hidden'} whileInView={'visible'} viewport={{once: true}} custom={0.5} type="text" style={{
                     border: errors?.userName ? '1px solid red' : ""
@@ -77,6 +82,16 @@ export const Contacts = React.memo(() => {
                     opacity: !isValid ? '0.6' : "1"
                 }} disabled={!isValid}>Send</motion.button>
             </form>
+            {
+                location.pathname === '/contacts'
+                ?
+                <div className="EmailAdress">
+                    <motion.h4 variants={emailAddresVariant} initial={'hidden'} animate={'visible'}>{t('my-email-addres-to-contact')} <img src="https://i.ibb.co/k4FHzvV/gmail-1.png" alt="Email"/></motion.h4>
+                    <p>aleksymalinowski21@gmail.com</p>
+                </div>
+                :
+                null
+            }
         </div>
     )
 })

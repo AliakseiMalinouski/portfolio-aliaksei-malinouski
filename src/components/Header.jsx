@@ -9,8 +9,8 @@ import { languagesThunk } from "../Redux/Header/languagesThunk";
 import { eventLoop } from "../events";
 import {changeLanguage} from 'i18next';
 import { updateCurrentLanguage } from "../Redux/Header/languagesSlice";
-import { linkSpanHeader } from "../motion variants/variants";
-import { useNavigate } from "react-router-dom";
+import { linkSpanHeader, activeLinkSpanHeader } from "../motion variants/variants";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Snack } from "./Snack";
 
 export const Header = React.memo(() => {
@@ -22,7 +22,12 @@ export const Header = React.memo(() => {
     const links = useSelector(state => state.links.links);
     const languages = useSelector(state => state.languages.languages);
     const currentLanguage = useSelector(state => state.languages.currentLanguage);
+
     const [snakeState, setSnackState] = useState(false);
+    
+    let location = useLocation();
+
+    let activeLink = location.pathname;
 
     useEffect(() => {
         if(!links.length) dispatch(navLinksThunk);
@@ -46,7 +51,7 @@ export const Header = React.memo(() => {
     }, [changeCurrentLanguageParent]);
 
 
-    const linksMemoizeed = useMemo(() => links.map(({id, link, key}) => <Link key={id} link={link} translateKey={key} setLanguage={t} variant={linkSpanHeader}/>), [links, t]);
+    const linksMemoizeed = useMemo(() => links.map(({id, link, key}) => <Link key={id} link={link} translateKey={key} setLanguage={t} variant={linkSpanHeader} activeLink={activeLink} activeVariant={activeLinkSpanHeader}/>), [links, t, activeLink]);
     const translateSelectMemoizeed = useMemo(() => <LanguageSelect key={1} languages={languages} content={t} currentLanguage={currentLanguage}/>, [languages, t, currentLanguage])
 
     return (
