@@ -24,12 +24,19 @@ export const Contacts = React.memo(() => {
     const handleForm = (data) => {
         send(emailJsConfig.serviceId, emailJsConfig.templateId, data, emailJsConfig.publicKey)
         .then(response => {
-            console.log(JSON.stringify(response))
+            if(response.status === 200) {
+
+            }
+            else {
+                alert("Error with post message to email");
+            }
+        })
+        .catch(error => {
+            alert(`Error with post data. Type error if ${error}`);
         })
         reset();
     }
 
-    // comm
 
     return (
         <div className="Contacts">
