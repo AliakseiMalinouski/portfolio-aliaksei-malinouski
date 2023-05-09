@@ -26,7 +26,7 @@
     "short-description-yanki": "This project is an online shop of women's clothing, which...",
     "full-description-yanki": "This project is an online shop of women's clothing, which presents various types of women's outerwear: jackets, coats, jackets and fur coats. The user has an opportunity to add goods to the cart, make an order by filling out a form. All orders go to the order history, to which the user has access by first registering an account or by logging in. The website has the ability to switch and support three languages: English, Russian and Ukrainian. The user has an opportunity to get the price of the goods in three currencies: dollar, euro and Ukrainian hryvnia. There is also a feedback form on the main page, which, once filled in, sends all the information to the e-mail address.",
     "read-more-button-text": "Read more",
-    "title": "Projects",
+    "title-project": "Projects",
     "stack": "Stack technologies: ",
     "links": "Deployed application and source code: ",
     "api": "APIs used by the application: ",
@@ -40,5 +40,7 @@
     "error-message-form-input-message": "This field requires a minimum of 10 characters*",
     "send-contact-form-button": "Send",
     "about-me": "About me",
-    "my-tech-stack": "My technology stack:"
+    "my-tech-stack": "My technology stack:",
+    "my-email-addres-to-contact": "My email address for contact",
+    "all-info-about-me": "Hi! My name is Alexei Malinovsky. I am 20 years old. I'm a Front End Developer from Wroclaw, Poland. I've been doing Front End Development for a year and a half. I was professionally trained at IT-Academy course, which took 10 months. During that period I learned HTML, CSS and its preprocessors, JavaScript and TypeScript, and of course the popular JavaScript library React. After finishing the courses, I worked as a freelancer. I had orders from clients, which I fulfilled and presented to the client. Worked like that for more than a month. I stopped because I didn't see myself developing as a professional in this way, so to this day, on a daily basis, I'm learning on my own, keeping up with trends in Front-End Development and looking for a full time job with an it company. In the future I plan to develop as a FullStack Node.js developer, because I can see the tendency and demand for such specialists in the future. I'm fluent in Polish, English, Russian and Belarusian. I consider remote work in Poland and abroad, as well as office work in Poland. "
 }
