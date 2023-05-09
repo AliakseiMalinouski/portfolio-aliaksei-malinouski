@@ -28,6 +28,8 @@ export const Contacts = React.memo(() => {
         reset();
     }
 
+    // comm
+
     return (
         <div className="Contacts">
             <form action="#" onSubmit={handleSubmit(handleForm)}>
