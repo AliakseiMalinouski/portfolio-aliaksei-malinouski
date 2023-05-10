@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 
-export const Link = React.memo(({link, translateKey, setLanguage, variant, activeLink, activeVariant}) => {
+export const Link = React.memo(({link, translateKey, setLanguage, variant, activeLink, activeVariant, isTransform}) => {
     if(activeLink === link) {
         return (
             <motion.div
             whileHover={{
-                scale: 1.08,
+                scale: isTransform ? null : 1.08,
                 transition: {
                     duration: 0.3
                 }
@@ -30,7 +30,7 @@ export const Link = React.memo(({link, translateKey, setLanguage, variant, activ
         return (
             <motion.div
             whileHover={{
-                scale: 1.08,
+                scale: isTransform ? null : 1.08,
                 transition: {
                     duration: 0.3
                 }

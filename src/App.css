@@ -524,3 +524,48 @@ h1 {
   height: 453px;
   margin-top: 50px;
 }
+
+.Footer {
+  padding-top: 100px;
+}
+
+.Footer .FooterContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Footer .FooterContent .LinksFooter div {
+  margin-bottom: 10px;
+}
+
+.Footer .FooterContent .AvatarFooter {
+  width: 150px;
+}
+
+.Footer .FooterContent .SocialNetworksFooter {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer .FooterContent .OtherSocialNetworks {
+  display: flex;
+  flex-direction: column;
+}
+
+.Footer .FooterContent .OtherSocialNetworks img {
+  width: 30px;
+}
+
+.Footer .FooterContent .OtherSocialNetworks p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+
+.Footer .FooterContent .OtherSocialNetworks p span {
+  font-weight: bold;
+  margin-left: 8px;
+}
