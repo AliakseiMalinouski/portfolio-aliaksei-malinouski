@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { projectsInfoThunk } from "../Redux/Projects/projectsInfoThunk";
@@ -12,7 +12,7 @@ import { Pack } from "./Pack";
 import { Button } from "@mui/material";
 import { LinksToProject } from "./LinksToProject";
 import { Api } from "./Api";
-
+import {scrollToElement} from '../helpers/scrollToElement';
 
 export const ProjectsDetails = React.memo(() => {
 
@@ -22,6 +22,8 @@ export const ProjectsDetails = React.memo(() => {
 
     let params = useParams();
 
+    let parent = useRef();
+
     let projectType = params.projectname;
 
     const projects = useSelector(state => state.projects.projects);
@@ -30,6 +32,10 @@ export const ProjectsDetails = React.memo(() => {
     const [stackState, setStackState] = useState(false);
     const [packState, setPackState] = useState(false);
     const [apisState, setApisState] = useState(false);
+
+    useEffect(() => {
+        scrollToElement('element', parent.current);
+    }, [parent]);
 
     useEffect(() => {
         if(!projects.length) dispatch(projectsInfoThunk);
@@ -60,7 +66,7 @@ export const ProjectsDetails = React.memo(() => {
                 currentProject 
                 ?
                 <>
-                <div className="ProjectsDetailsFlexBlock">
+                <div className="ProjectsDetailsFlexBlock" ref={parent}>
                     <motion.img variants={projectsDetailsImage} initial={'hidden'} animate={'visible'} src={currentProject && currentProject.image} alt='Project' className="ProjectImage"/>
                     <div className="MoreAboutProject">
                         {titleMemoizeed}
