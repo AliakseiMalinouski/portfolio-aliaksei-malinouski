@@ -4,6 +4,7 @@ import navLinksSlice from './Header/navLinksSlice';
 import projectsInfoSlice from './Projects/projectsInfoSlice';
 import techStackSlice from './About/techStackSlice';
 import messagesSlice from './Contact/messagesSlice';
+import certificatesSlice from './About/certificatesSlice';
 
 export const store = configureStore({
     reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
         links: navLinksSlice,
         projects: projectsInfoSlice,
         stack: techStackSlice,
-        messages: messagesSlice
+        messages: messagesSlice,
+        certificates: certificatesSlice
     }
 })

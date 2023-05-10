@@ -275,3 +275,29 @@ export const largeParagraphAboutMeVariant = {
         }
     }
 }
+
+export const defaultCertificateVariant = {
+    hidden: {
+        opacity: 0
+    },
+    visible: custom => ({
+        opacity: 1,
+        transition: {
+            delay: custom * 0.5,
+            duration: 0.8
+        }
+    })
+}
+
+
+export const chosenCertificateVariant = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 0.4,
+        transition: {
+            duration: 0.5
+        }
+    }
+}

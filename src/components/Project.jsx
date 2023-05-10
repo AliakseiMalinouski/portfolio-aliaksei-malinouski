@@ -15,7 +15,7 @@ export const Project = React.memo(({id, apis, deploy, full, github, short, image
 
     return (
         <motion.div className="Project" variants={projectVariant} initial={'hidden'} whileInView={'visible'} custom={id} viewport={{once: true, amount: 0.2}}>
-            <img className="ProjectImage" src={image} alt="Project"/>
+            <img className="ProjectImage" src={image} alt="Project" onClick={goToDetailsProjectParent}/>
             <div className="ShortProjectInfo">
                 <h3>{content(`${title}`)}</h3>
                 <p>{content(`${full}`)}</p>
