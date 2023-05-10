@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { techStackThunk } from "../Redux/About/techStackThunk";
 import { Tech } from "./Tech";
 import { useLocation } from "react-router-dom";
-import { techStackTitleVariant, largeParagraphAboutMeVariant } from "../motion variants/variants";
+import { techStackTitleVariant, largeParagraphAboutMeVariant, activeCertificateVariant } from "../motion variants/variants";
 import { motion } from "framer-motion";
 import { certificatesThunk } from "../Redux/About/certificatesThunk";
 import { Certificate } from "./Certificate";
@@ -41,7 +41,12 @@ export const About = React.memo(() => {
         if(key) {
             let currentCertificateInArray = certificates.find(elem => elem.certificate === key);
             setCurrentSertificate(currentCertificateInArray);
-            scrollToElement(scrolledElem.current);
+            if(!scrolledElem.current) {
+                scrollToElement("window", null);
+            }
+            else {
+                scrollToElement("element", scrolledElem.current);
+            }
         }
     }, [certificates]);
 
@@ -81,18 +86,21 @@ export const About = React.memo(() => {
                         ?
                         null
                         :
-                        <div className="CurrentCertificate"
+                        <motion.div className="CurrentCertificate" ref={scrolledElem}
+                        variants={activeCertificateVariant}
+                        initial={'hidden'}
+                        animate={'visible'}
                         style={{
                             backgroundImage: `url(${currentCertificate.image})`,
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: '100% 100%'
                         }}
                         >
-                        </div>
+                        </motion.div>
                     }
             </div>
         </div>
-        <div ref={scrolledElem}></div>
+        <div></div>
         </>
     )
 })
