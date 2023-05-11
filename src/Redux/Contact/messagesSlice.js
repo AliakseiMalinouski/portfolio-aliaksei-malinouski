@@ -3,18 +3,24 @@ import {createSlice} from '@reduxjs/toolkit';
 
 
 const initialState = {
-    messages: []
+    loadState: "completed"
 }
 
 export const messagesSlice = createSlice({
     name: "messages",
     initialState,
     reducers: {
-        addNewMessage: (state, action) => {
-            state.messages.push(action.payload);
+        startLoading: (state, action) => {
+            state.loadState = action.payload;
+        },
+        finishLoading: (state, action) => {
+            state.loadState = action.payload;
+        },
+        errorLoading: (state, action) => {
+            state.loadState = action.payload;
         }
     }
 });
 
-export const {addNewMessage} = messagesSlice.actions;
+export const {startLoading, finishLoading, errorLoading} = messagesSlice.actions;
 export default messagesSlice.reducer;
