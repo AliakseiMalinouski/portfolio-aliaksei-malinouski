@@ -64,6 +64,10 @@ export const Contacts = React.memo(() => {
         <Title tag='h2' text="contact" content={t}/>
         {loadState === 'completed' && 
         <div className="Contacts">
+        <p style={{
+            paddingBottom: '30px',
+            textAlign: 'center'
+        }}>{t("contact-hint")}</p>
         <form action="#" onSubmit={handleSubmit(handleForm)}>
             <motion.input variants={fieldContactFormVariant} initial={'hidden'} whileInView={'visible'} viewport={{once: true}} custom={0.5} type="text" style={{
                 border: errors?.userName ? '1px solid red' : ""

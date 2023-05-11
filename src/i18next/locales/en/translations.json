@@ -44,5 +44,6 @@
     "my-email-addres-to-contact": "My email address for contact",
     "all-info-about-me": "Hi! My name is Alexei Malinovsky. I am 20 years old. I'm a Front End Developer from Wroclaw, Poland. I've been doing Front End Development for a year and a half. I was professionally trained at IT-Academy course, which took 10 months. During that period I learned HTML, CSS and its preprocessors, JavaScript and TypeScript, and of course the popular JavaScript library React. After finishing the courses, I worked as a freelancer. I had orders from clients, which I fulfilled and presented to the client. Worked like that for more than a month. I stopped because I didn't see myself developing as a professional in this way, so to this day, on a daily basis, I'm learning on my own, keeping up with trends in Front-End Development and looking for a full time job with an it company. In the future I plan to develop as a FullStack Node.js developer, because I can see the tendency and demand for such specialists in the future. I'm fluent in Polish, English, Russian and Belarusian. I consider remote work in Poland and abroad, as well as office work in Poland. ",
     "sended-status": "Your message has been successfully sent",
-    "cerfiticates-title": "Certificates"
+    "cerfiticates-title": "Certificates",
+    "contact-hint": "Fill in the form and I will contact you at the email address given in the form "
 }
