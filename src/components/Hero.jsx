@@ -4,7 +4,7 @@ import { transformString } from "../helpers/transformString";
 import { ButtonWrapper } from "./Button";
 import { heroButton } from "../motion variants/variants";
 
-export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocial, myPhoto, heroButtonText}) => {
+export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocial, myPhoto, heroButtonText, myPhotoMobileVariant, myMobilePhotoState}) => {
 
     let newParagraph = transformString('divide', paragraph);
 
@@ -51,11 +51,21 @@ export const Hero = React.memo(({variantTitle, paragraph, variantP, variantSocia
                 </motion.div>
                 <ButtonWrapper type="heroButton" content="click" variantsHero={heroButton} heroButtonText={heroButtonText}/>
             </div>
-            <motion.img
-            initial={'hidden'}
-            animate={'visible'}
-            variants={myPhoto}
-            className="MyPhoto" src="https://i.ibb.co/zmWSvn5/1706-oooo-plus.png" alt="Me"/>
+            {
+                myMobilePhotoState
+                ?
+                <motion.img
+                initial={'hidden'}
+                animate={'visible'}
+                variants={myPhoto}
+                className="MyPhoto" src="https://i.ibb.co/zmWSvn5/1706-oooo-plus.png" alt="Me"/>
+                :
+                <motion.img
+                initial={'hidden'}
+                animate={'visible'}
+                variants={myPhotoMobileVariant}
+                className="MyPhoto" src="https://i.ibb.co/zmWSvn5/1706-oooo-plus.png" alt="Me"/>
+            }
         </div>
     )
 })

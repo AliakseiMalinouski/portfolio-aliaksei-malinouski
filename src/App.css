@@ -75,7 +75,7 @@ h1 {
 }
 
 .Content .Container .Home {
-  padding-top: 200px;
+  padding-top: 100px;
 }
 
 .Content .Container .Home .Hero {
@@ -741,5 +741,93 @@ h1 {
 
   .Content .Container .Home {
     padding-top: 80px;
+  }
+}
+
+@media all and (max-width: 720px) {
+  .Container {
+    width: 560px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .Content .Container .AllProjects .Projects .Project {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  .Content .Container .AllProjects .Projects .Project .ShortProjectInfo {
+    width: 100%;
+    padding-left: 0px;;
+  }
+
+  .Content .Contacts p {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectDetailsTitle {
+    padding-top: 20px;
+  }
+
+  .Footer {
+    padding-top: 20px;
+  }
+
+  .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject h4 {
+    padding-top: 25px;
+  }
+
+  .Content .Container .About .CurrentCertificate {
+    width: 100%;
+  }
+
+  .Content .Container .Contacts form textarea {
+    width: 100%;
+  }
+
+  .Content .Container .Contacts form input {
+    width: 100%;
+  }
+
+  .Content .Container .Home .Hero .MyPhoto {
+    width: 285px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .Content .Container .Home .Hero div p {
+    font-size: 14px;
+  }
+
+  .Content .Container .Home .Projects .Project {
+    display: block;
+    width: 80%;
+    margin-bottom: 50px;
+    height: 199px;
+  }
+
+  .Content .Container .Home .Projects .Project .ShortProjectInfo {
+    padding-left: 0px;
+    width: 100%;
+  }
+
+  .Content .Container .About .StackOfTech {
+    width: 100%;
+    flex-flow: wrap;
+  }
+
+  .Content .Container .About .StackOfTech li img {
+    width: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+
+@media all and (max-width: 560px) {
+  .Container {
+    width: 100%;
   }
 }

@@ -21,11 +21,18 @@ export const Footer = React.memo(() => {
 
     const links = useSelector(state => state.links.links);
 
+    const [myMobilePhotoState, setMyMobilePhotoState] = useState(false);
+
     const [isTransform, setTransform] = useState(false);
 
     useEffect(() => {
         if(!links.length) dispatch(navLinksThunk);
     }, [links, dispatch]);
+
+    useEffect(() => {
+        let windowWidth560 = window.matchMedia("(max-width: 720px)");
+        if(windowWidth560.matches) setMyMobilePhotoState(true);
+    }, []);
 
     useEffect(() => {setTransform(true)}, []);
 
@@ -33,7 +40,13 @@ export const Footer = React.memo(() => {
 
     return (
         <div className="FooterContent">
-            <img src="https://i.ibb.co/zmWSvn5/1706-oooo-plus.png" alt="Avatar" className="AvatarFooter"/>
+            {
+                myMobilePhotoState
+                ?
+                null
+                :
+                <img src="https://i.ibb.co/zmWSvn5/1706-oooo-plus.png" alt="Avatar" className="AvatarFooter"/>
+            }
             <div className="LinksFooter">
                 {linksMemoizeed}
             </div>

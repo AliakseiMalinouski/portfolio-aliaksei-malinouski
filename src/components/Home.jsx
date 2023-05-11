@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {Hero} from './Hero';
-import { mainTitle, heroParagraph, heroSocial, myPhoto } from "../motion variants/variants";
+import { mainTitle, heroParagraph, heroSocial, myPhoto, myPhotoMobileVariant } from "../motion variants/variants";
 import { useTranslation } from "react-i18next";
 import { projectsInfoThunk } from "../Redux/Projects/projectsInfoThunk";
 import { Project } from "./Project";
@@ -10,6 +10,8 @@ import { About } from "./About";
 import { Title } from "./Title";
 
 export const Home = React.memo(() => {
+
+    const [myMobilePhotoState, setMyMobilePhotoState] = useState(false);
 
     let {t} = useTranslation();
     let dispatch = useDispatch();
@@ -20,13 +22,21 @@ export const Home = React.memo(() => {
         if(!projects.length) dispatch(projectsInfoThunk);
     }, [projects, dispatch]);
 
+    useEffect(() => {
+        let windowWidth560 = window.matchMedia("(max-width: 560px)");
+        if(windowWidth560.matches) setMyMobilePhotoState(true);
+    }, []);
+
     let heroMemoizeed = useMemo(() => <Hero key={1}
     variantTitle={mainTitle}
     myPhoto={myPhoto}
     variantSocial={heroSocial}
     variantP={heroParagraph}
     heroButtonText={t("hero-button-text")}
-    paragraph={t("hero-paragraph")}/>, [t]);
+    paragraph={t("hero-paragraph")}
+    myPhotoMobileVariant={myPhotoMobileVariant}
+    myMobilePhotoState={myMobilePhotoState}
+    />, [t, myMobilePhotoState]);
 
     const projectsMemoizeed = useMemo(() => projects.map(({id, apis, deploy, full, github, short, image, packages, read, stack, title, type}) => <Project
     key={id}

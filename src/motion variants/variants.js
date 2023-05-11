@@ -127,7 +127,7 @@ export const largeTitle = {
 export const projectVariant = {
     hidden: {
         opacity: 0,
-        x: -600
+        x: -400
     },
     visible: custom => ({
         opacity: 1,
@@ -323,7 +323,42 @@ export const contactHintVariant = {
     visible: {
         opacity: 1,
         transition: {
+            delay: 0.5,
             duration: 0.8
         }
+    }
+}
+
+export const projectMobileVariant = {
+    hidden: {
+        opacity: 0,
+        x: -150
+    },
+    visible: custom => ({
+        opacity: 1,
+        x: 0,
+        transition: {
+            delay: custom * 0.5,
+            duration: 0.8
+        }
+    }),
+}
+
+
+export const myPhotoMobileVariant = {
+    hidden: {
+
+    },
+    visible: {
+        scale: 1.04,
+        transition: {
+            delay: 0.5,
+            duration: 2,
+            repeat: Infinity,
+            repeatDelay: 1,
+            repeatType: 'reverse',
+            type: 'tween',
+            ease: 'easeInOut'
+        },
     }
 }
