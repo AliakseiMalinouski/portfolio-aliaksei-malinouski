@@ -2,7 +2,7 @@ import React from "react";
 import {useForm} from 'react-hook-form';
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { fieldContactFormVariant, buttonContactFormVariant, emailAddresVariant } from "../motion variants/variants";
+import { fieldContactFormVariant, buttonContactFormVariant, emailAddresVariant, contactHintVariant } from "../motion variants/variants";
 import {send} from 'emailjs-com';
 import { emailJsConfig } from "../emailjs-config";
 import { Title } from "./Title";
@@ -64,10 +64,10 @@ export const Contacts = React.memo(() => {
         <Title tag='h2' text="contact" content={t}/>
         {loadState === 'completed' && 
         <div className="Contacts">
-        <p style={{
+        <motion.p variants={contactHintVariant} initial={'hidden'} whileInView={'visible'} viewport={{once: true}} style={{
             paddingBottom: '30px',
             textAlign: 'center'
-        }}>{t("contact-hint")}</p>
+        }}>{t("contact-hint")}</motion.p>
         <form action="#" onSubmit={handleSubmit(handleForm)}>
             <motion.input variants={fieldContactFormVariant} initial={'hidden'} whileInView={'visible'} viewport={{once: true}} custom={0.5} type="text" style={{
                 border: errors?.userName ? '1px solid red' : ""

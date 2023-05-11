@@ -578,3 +578,68 @@ h1 {
   font-weight: bold;
   margin-left: 8px;
 }
+
+@media all and (max-width: 1300px) {
+  .Container {
+    width: 1024px;
+  }
+  
+  .Content .Container .Home .Projects .Project .ShortProjectInfo p {
+    margin-top: 14px;
+    line-height: 25px;
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+
+  .Content .Container .Home .Hero .MyPhoto {
+    width: 340px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .Content .Container .About .StackOfTech li img {
+    width: 30px;
+  }
+
+  .Content .Container .About h4 {
+    font-size: 18px;
+  }
+
+  .Content .Container .About .Certificates .Certificate {
+    width: 300px;
+    height: 250px;
+    background-color: red;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .Content .Container .About .FlexGroup {
+    padding: 10px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectDetailsTitle {
+    font-size: 22px;
+  }
+  
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .Packes li {
+    font-size: 16px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .StackOfTech li {
+    font-size: 16px;
+  }
+
+  .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject h4 {
+    font-size: 22px;
+  }
+
+  .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject .SocialLinks li a {
+    font-size: 16px;
+  }
+
+  .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject p {
+    font-size: 16px;
+  }
+}

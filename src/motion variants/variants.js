@@ -127,7 +127,7 @@ export const largeTitle = {
 export const projectVariant = {
     hidden: {
         opacity: 0,
-        x: -1000
+        x: -600
     },
     visible: custom => ({
         opacity: 1,
@@ -138,6 +138,7 @@ export const projectVariant = {
         x: 0
     })
 }
+
 
 export const largeTitleProjectsDetails = {
     hidden: {
@@ -304,6 +305,18 @@ export const chosenCertificateVariant = {
 
 
 export const activeCertificateVariant = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 0.8
+        }
+    }
+}
+
+export const contactHintVariant = {
     hidden: {
         opacity: 0
     },
