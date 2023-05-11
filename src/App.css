@@ -48,7 +48,7 @@ h1 {
 
 
 .Header .Container{
-  height: 80px;
+  height: auto;
 }
 
 .Header .Container .HeaderContent {
@@ -522,7 +522,6 @@ h1 {
 .Content .Container .About .Certificates .Certificate {
   width: 410px;
   height: 310px;
-  background-color: red;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -610,7 +609,6 @@ h1 {
   .Content .Container .About .Certificates .Certificate {
     width: 300px;
     height: 250px;
-    background-color: red;
     border-radius: 6px;
     cursor: pointer;
   }
@@ -641,5 +639,107 @@ h1 {
 
   .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject p {
     font-size: 16px;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .Container {
+    width: 720px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .Header .Container .HeaderContent .Logo {
+    top: 35%;
+  }
+
+  .Content .Container .Home .Projects .Project .ProjectImage {
+    width: 65%;
+  }
+
+  .Content .Container .Home .Projects .Project .ShortProjectInfo h3 {
+    font-size: 18px;
+  }
+
+  .Content .Container .Home .Projects .Project .ShortProjectInfo {
+    padding-left: 25px;
+    width: 35%;
+  }
+
+  .Content .Container .Home .Projects .Project .ProjectImage {
+    height: 320px;
+  }
+
+  .Content .Container .Contacts form {
+    width: 85%;
+  }
+
+  .Content .Container .About .FlexGroup {
+    flex-flow: wrap;
+  }
+
+  .Content .Container .About .Certificates .Certificate {
+    margin-bottom: 20px;
+  }
+
+  .Content .Container .About h4 {
+    margin-bottom: 20px;
+  }
+
+  .Content .Container .About .StackOfTech li img {
+    width: 25px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock {
+    flex-flow: wrap;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectImage {
+    width: 100%;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject {
+    height: 290px;
+  }
+
+  .Content .Container .ProjectsDetails {
+    padding-top: 10px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .InfoAboutStackAndPackages {
+    justify-content: space-between;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectDetailsTitle {
+    font-size: 25px;
+  }
+
+  .Content .Container .AllProjects .Projects .Project .ProjectImage {
+    width: 70%;
+    height: 320px;
+  }
+
+  .Content .Container .AllProjects .Projects .Project .ShortProjectInfo {
+    padding-left: 25px;
+    width: 30%;
+  }
+
+  .Title {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .Container {
+    padding-bottom: 30px;
+  }
+
+  .Content .Contacts p {
+    font-size: 14px;
+  }
+
+  .Content .Container .Home {
+    padding-top: 80px;
   }
 }
