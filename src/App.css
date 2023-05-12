@@ -32,6 +32,7 @@ h1 {
   margin-bottom: 20px;
 }
 
+
 .Container {
   margin: 0 auto;
   width: 1300px;
@@ -64,6 +65,11 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-right: 100px;
+}
+
+.Header .Container .HeaderContent .MenuButtonHeader {
+  width: 40px;
+  cursor: pointer;
 }
 
 .Header .Container .HeaderContent .Logo {
@@ -578,6 +584,8 @@ h1 {
   margin-left: 8px;
 }
 
+
+
 @media all and (max-width: 1300px) {
   .Container {
     width: 1024px;
@@ -788,6 +796,10 @@ h1 {
 
   .Content .Container .Contacts form input {
     width: 100%;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectImage {
+    height: 320px;
   }
 
   .Content .Container .Home .Hero .MyPhoto {
