@@ -33,9 +33,10 @@ export const ProjectsDetails = React.memo(() => {
     const [packState, setPackState] = useState(false);
     const [apisState, setApisState] = useState(false);
 
-    // useEffect(() => {
-    //     scrollToElement('element', parent.current);
-    // }, [parent]);
+    useEffect(() => {
+        let windowWidth = window.matchMedia("(max-width: 560px)");
+        if(!windowWidth.matches) scrollToElement('element', parent.current);
+    }, [parent]);
 
     useEffect(() => {
         if(!projects.length) dispatch(projectsInfoThunk);
