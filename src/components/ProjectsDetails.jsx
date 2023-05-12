@@ -33,9 +33,9 @@ export const ProjectsDetails = React.memo(() => {
     const [packState, setPackState] = useState(false);
     const [apisState, setApisState] = useState(false);
 
-    useEffect(() => {
-        scrollToElement('element', parent.current);
-    }, [parent]);
+    // useEffect(() => {
+    //     scrollToElement('element', parent.current);
+    // }, [parent]);
 
     useEffect(() => {
         if(!projects.length) dispatch(projectsInfoThunk);
@@ -90,7 +90,7 @@ export const ProjectsDetails = React.memo(() => {
                         </div>
                     </div>
                 </div>
-                <motion.div className="OtherInfoAboutCurrentProject"
+                <motion.div className="OtherInfoAboutCurrentProject" style={{paddingTop: currentProject?.packs?.length > 4 ? "130px" : "50px"}}
                 initial={{
                     opacity: 0,
                 }}
@@ -106,7 +106,7 @@ export const ProjectsDetails = React.memo(() => {
                     <p>
                         {t(`${currentProject.full}`)}
                     </p>
-                    <Button variant={apisState ? 'contained' : 'outlined'}
+                    <Button variant={apisState ? 'contained' : 'outlined'} className="ApisActivatedButton"
                     onClick={() => {
                         setApisState(prev => !prev);
                     }}

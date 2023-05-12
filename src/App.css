@@ -842,5 +842,110 @@ h1 {
 @media all and (max-width: 560px) {
   .Container {
     width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .Content .Container .Home .Hero {
+    justify-content: center;
+    flex-flow: wrap;
+  }
+
+  .Content .Container .Home .Hero .MyPhoto {
+    width: 250px;
+    margin-top: 30px;
+  }
+
+  .Content .Container .Home .Projects .Project {
+    width: 100%;
+  }
+
+  .Content .Container .Contacts .SubmitFormButton {
+    width: 100%;
+  }
+
+  .Content .Container .About .CurrentCertificate {
+    width: 90%;
+    height: 293px;
+  }
+
+  .Content .Container .Contacts .EmailAdress h4 {
+    font-size: 13px;
+  }
+
+  .Content .Container .Contacts .EmailAdress h4 img {
+    width: 20px;
+  }
+
+  .Content .Container .About .MoreAboutMe p {
+    font-size: 14px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectImage {
+    height: 190px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject h3 {
+    font-size: 18px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .InfoAboutStackAndPackages {
+    justify-content: center;
+    flex-flow: wrap;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .StackOfTech {
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .StackOfTech li {
+    margin-right: 10px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .StackTitle {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .Packes {
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .Packes li {
+    margin-right: 10px;
+  }
+
+  .Content .Container .ProjectsDetails .ProjectsDetailsFlexBlock .MoreAboutProject .PacksTitle {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject h4 {
+    font-size: 15px;
+  }
+  
+  .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject {
+    padding-top: 130px;
+  }
+
+  .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject .ApisActivatedButton {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .Content .Container .ProjectsDetails .OtherInfoAboutCurrentProject .ApiList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

@@ -127,7 +127,7 @@ export const largeTitle = {
 export const projectVariant = {
     hidden: {
         opacity: 0,
-        x: -400
+        x: -200
     },
     visible: custom => ({
         opacity: 1,
