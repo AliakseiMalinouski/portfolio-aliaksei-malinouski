@@ -30,8 +30,8 @@ export const Footer = React.memo(() => {
     }, [links, dispatch]);
 
     useEffect(() => {
-        let windowWidth560 = window.matchMedia("(max-width: 720px)");
-        if(windowWidth560.matches) setMyMobilePhotoState(true);
+        let windowWidth720 = window.matchMedia("(max-width: 720px)");
+        if(windowWidth720.matches) setMyMobilePhotoState(true);
     }, []);
 
     useEffect(() => {setTransform(true)}, []);
@@ -39,7 +39,9 @@ export const Footer = React.memo(() => {
     const linksMemoizeed = useMemo(() => links.map(({id, link, key}) => <Link key={id} link={link} translateKey={key} setLanguage={t} variant={linkSpanHeader} activeLink={activeLink} activeVariant={activeLinkSpanHeader} isTransform={isTransform}/>), [links, t, activeLink, isTransform]);
 
     return (
-        <div className="FooterContent">
+        <div className="FooterContent" style={{
+            justifyContent: myMobilePhotoState ? 'space-evenly' : "space-between"
+        }}>
             {
                 myMobilePhotoState
                 ?
@@ -50,16 +52,22 @@ export const Footer = React.memo(() => {
             <div className="LinksFooter">
                 {linksMemoizeed}
             </div>
-            <div className="OtherSocialNetworks">
-                <p>
-                    <img src="https://i.ibb.co/YttZ8Xh/telegram.png" alt="Telegram"/>
-                    <span>@aleksymalinowski</span>
-                </p>
-                <p>
-                    <img src="https://i.ibb.co/R26DFFR/instagram.png" alt="Telegram"/>
-                    <span>aleksymalinowski_</span>
-                </p>
-            </div>
+            {
+                myMobilePhotoState
+                ?
+                null
+                :
+                <div className="OtherSocialNetworks">
+                    <p>
+                        <img src="https://i.ibb.co/YttZ8Xh/telegram.png" alt="Telegram"/>
+                        <span>@aleksymalinowski</span>
+                    </p>
+                    <p>
+                        <img src="https://i.ibb.co/R26DFFR/instagram.png" alt="Telegram"/>
+                        <span>aleksymalinowski_</span>
+                    </p>
+                </div>
+            }
             <motion.div className="SocialNetworksFooter" initial={{
                 opacity: 0
             }} whileInView={{
