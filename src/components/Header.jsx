@@ -15,6 +15,7 @@ import { Snack } from "./Snack";
 import { Drawer } from "@mui/material";
 import { iconsLinkThunk } from "../Redux/Contact/iconsLinkThunk";
 import { IconLink } from "./IconLink";
+import { PersonalLink } from "./PersonalLink";
 
 export const Header = React.memo(() => {
 
@@ -79,7 +80,15 @@ export const Header = React.memo(() => {
     alt={alt}
     />), [iconsLink]);
 
-    console.log(iconsLink)
+    const personalSocialNetworksMemoizeed = useMemo(() => iconsLink && iconsLink?.personal?.content?.map(({id, image, href, styles, alt, display, margin}) => <PersonalLink
+    key={id}
+    image={image}
+    href={href}
+    styles={styles}
+    alt={alt}
+    display={display}
+    margin={margin}
+    />), [iconsLink]);
 
     return (
         <div className="HeaderContent" style={{justifyContent: headerState ? 'space-between' : ""}}>
@@ -119,15 +128,10 @@ export const Header = React.memo(() => {
                         }}>
                         {developerSocialNetworkMemoizeed}
                         </div>
-                        <div>
-                        <p>
-                            <img src="https://i.ibb.co/YttZ8Xh/telegram.png" alt="Telegram"/>
-                            <span>@aleksymalinowski</span>
-                        </p>
-                        <p>
-                            <img src="https://i.ibb.co/R26DFFR/instagram.png" alt="Instagram"/>
-                            <span>aleksymalinowski_</span>
-                        </p>
+                        <div style={{
+                            marginTop: '30px'
+                        }}>
+                            {personalSocialNetworksMemoizeed}
                         </div>
                     </div>
                 </Drawer>

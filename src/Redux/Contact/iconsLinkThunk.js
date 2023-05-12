@@ -2,7 +2,7 @@ import { setIconsLink, setLoadStateIconsLinks } from "./iconsLinkSlice";
 
 export const iconsLinkThunk = (dispatch) => {
     dispatch(setLoadStateIconsLinks(true));
-    fetch("https://gist.githubusercontent.com/AliakseiMalinouski/d713d06cd1329953566dd86e4c23af1c/raw/ea84dd2b4f64a406721d1281856243e799cd0a47/iconsLinkPortfolio")
+    fetch("https://gist.githubusercontent.com/AliakseiMalinouski/d713d06cd1329953566dd86e4c23af1c/raw/bce55b23198e3aeb9845aa07d32d9b3fbce45e08/iconsLinkPortfolio")
     .then(r => r.ok ? r.json() : alert(`Error with download`))
     .then(d => {
         let result = {
