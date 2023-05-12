@@ -431,6 +431,7 @@ h1 {
 .Content .Container .Contacts .EmailAdress p {
   padding-top: 20px;
   font-weight: 400;
+  text-align: center;
 }
 
 .Content .Container .About .FlexGroup {
