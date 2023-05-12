@@ -5,6 +5,7 @@ import projectsInfoSlice from './Projects/projectsInfoSlice';
 import techStackSlice from './About/techStackSlice';
 import messagesSlice from './Contact/messagesSlice';
 import certificatesSlice from './About/certificatesSlice';
+import iconsLinkSlice from './Contact/iconsLinkSlice';
 
 export const store = configureStore({
     reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
         projects: projectsInfoSlice,
         stack: techStackSlice,
         messages: messagesSlice,
-        certificates: certificatesSlice
+        certificates: certificatesSlice,
+        iconsLink: iconsLinkSlice
     }
 })

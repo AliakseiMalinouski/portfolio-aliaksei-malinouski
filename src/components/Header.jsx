@@ -13,6 +13,8 @@ import { linkSpanHeader, activeLinkSpanHeader } from "../motion variants/variant
 import { useLocation, useNavigate } from "react-router-dom";
 import { Snack } from "./Snack";
 import { Drawer } from "@mui/material";
+import { iconsLinkThunk } from "../Redux/Contact/iconsLinkThunk";
+import { IconLink } from "./IconLink";
 
 export const Header = React.memo(() => {
 
@@ -23,6 +25,8 @@ export const Header = React.memo(() => {
     const links = useSelector(state => state.links.links);
     const languages = useSelector(state => state.languages.languages);
     const currentLanguage = useSelector(state => state.languages.currentLanguage);
+    const iconsLink = useSelector(state => state.iconsLink.iconsLink);
+    const iconsLinkLoadState = useSelector(state => state.iconsLink.loadState);
 
     const [snakeState, setSnackState] = useState(false);
     const [snackType, setSnackType] = useState("");
@@ -40,6 +44,10 @@ export const Header = React.memo(() => {
     useEffect(() => {
         if(!languages.length) dispatch(languagesThunk)
     }, [languages, dispatch]);
+
+    useEffect(() => {
+        if(!iconsLinkLoadState) dispatch(iconsLinkThunk);
+    }, [iconsLinkLoadState, dispatch])
 
     useEffect(() => {
         let windowWidth = window.matchMedia('(max-width: 720px)');
@@ -60,9 +68,18 @@ export const Header = React.memo(() => {
         }
     }, [changeCurrentLanguageParent]);
 
-
     const linksMemoizeed = useMemo(() => links.map(({id, link, key}) => <Link key={id} link={link} translateKey={key} setLanguage={t} variant={linkSpanHeader} activeLink={activeLink} activeVariant={activeLinkSpanHeader} headerState={headerState}/>), [links, t, activeLink, headerState]);
-    const translateSelectMemoizeed = useMemo(() => <LanguageSelect key={1} languages={languages} content={t} currentLanguage={currentLanguage}/>, [languages, t, currentLanguage])
+    const translateSelectMemoizeed = useMemo(() => <LanguageSelect key={1} languages={languages} content={t} currentLanguage={currentLanguage}/>, [languages, t, currentLanguage]);
+    const developerSocialNetworkMemoizeed = useMemo(() => iconsLink && iconsLink?.developer?.content?.map(({id, href, image, styles, alt, margin}) =>  <IconLink 
+    key={id}
+    href={href}
+    imageSrc={image}
+    imageStyles={styles}
+    margin={margin}
+    alt={alt}
+    />), [iconsLink]);
+
+    console.log(iconsLink)
 
     return (
         <div className="HeaderContent" style={{justifyContent: headerState ? 'space-between' : ""}}>
@@ -100,21 +117,7 @@ export const Header = React.memo(() => {
                         <div style={{
                             marginTop: '30px'
                         }}>
-                        <a href="https://www.linkedin.com/in/aliaksei-malinouski-a44778249/" target="_blank" rel="noreferrer" style={{marginRight: '12px'}}>
-                            <img src="https://i.ibb.co/JdPdMNy/linkedin-2.png" alt='Linkedin'
-                            style={{width: '30px', heigth: '30px'}}
-                            />
-                        </a>
-                        <a href="https://github.com/AliakseiMalinouski" target="_blank" rel="noreferrer" style={{marginRight: '12px'}}>
-                            <img src="https://i.ibb.co/MgRCGH0/icons8-github-50.png" alt="GitHub"
-                            style={{width: '30px', heigth: '30px'}}
-                            />
-                        </a>
-                        <a href="mailto:aleksymalinowski21@gmail.com" target="_blank" rel="noreferrer" style={{marginRight: '12px'}}>
-                            <img src="https://i.ibb.co/CvNh5M4/email-1.png" alt="GitHub"
-                            style={{width: '30px', heigth: '30px'}}
-                            />
-                        </a>
+                        {developerSocialNetworkMemoizeed}
                         </div>
                         <div>
                         <p>
@@ -122,7 +125,7 @@ export const Header = React.memo(() => {
                             <span>@aleksymalinowski</span>
                         </p>
                         <p>
-                            <img src="https://i.ibb.co/R26DFFR/instagram.png" alt="Telegram"/>
+                            <img src="https://i.ibb.co/R26DFFR/instagram.png" alt="Instagram"/>
                             <span>aleksymalinowski_</span>
                         </p>
                         </div>
