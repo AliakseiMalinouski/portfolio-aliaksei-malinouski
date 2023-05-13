@@ -81,7 +81,7 @@ export const ProjectsDetails = React.memo(() => {
                                 }
                             </div>
                             <div className="InfoAboutPackages">
-                                <Button variant={packState ? "contained" : "outlined"} className="PacksTitle" onClick={() => setPackState(prev => !prev)}>{t("stack")}</Button>
+                                <Button variant={packState ? "contained" : "outlined"} className="PacksTitle" onClick={() => setPackState(prev => !prev)}>{t("pack")}</Button>
                                 {
                                     !packState ? null : <ul className="Packes">
                                     {packsMemoizeed}
